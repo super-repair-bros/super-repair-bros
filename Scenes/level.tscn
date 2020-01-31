@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Grafic/tiles/crossroads.png" type="Texture" id=1]
-[ext_resource path="res://tiles.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Graphics/tiles/crossroads.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/tiles.gd" type="Script" id=2]
 
 [sub_resource type="TileSet" id=1]
 0/name = "crossroads.png 0"
@@ -19,6 +19,5 @@
 
 [node name="tiles" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
-cell_size = Vector2( 24, 24 )
 format = 1
 script = ExtResource( 2 )
