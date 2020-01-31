@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Graphics/tiles/crossroads.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/tiles.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/PlayerCar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/level/tiles.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/PlayerCar/PlayerCar.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )

@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Super Repair Bros"
-run/main_scene="res://Scenes/PlayerCar.tscn"
+run/main_scene="res://Scenes/PlayerCar/PlayerCar.tscn"
 config/icon="res://icon.png"
 
 [display]
