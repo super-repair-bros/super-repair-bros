@@ -19,6 +19,10 @@ config/name="Super Repair Bros"
 run/main_scene="res://Scenes/PlayerCar.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/stretch/shrink=8.0
+
 [input]
 
 up={
