@@ -20,7 +20,6 @@ func get_input():
 
 func change_direction():
 	if ! test_move(transform, next_velocity) && next_velocity != velocity:
-		print("collision detected")
 		velocity = next_velocity
 
 func world_is_endless():
