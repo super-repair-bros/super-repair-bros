@@ -12,18 +12,20 @@ func _ready():
 	$RepairBar.play("default")
 
 func _input(event):
-	if event.is_action_pressed('right') && velocity.x >= 0:
+	if event.is_action_pressed('right') && velocity.x == 0:
 		next_velocity = Vector2(speed, 0)
-	if event.is_action_pressed('left') && velocity.x <= 0:
+	if event.is_action_pressed('left') && velocity.x == 0:
 		next_velocity = Vector2(-speed, 0)
-	if event.is_action_pressed('down') && velocity.y >= 0:
+	if event.is_action_pressed('down') && velocity.y == 0:
 		next_velocity = Vector2(0, speed)
-	if event.is_action_pressed('up') && velocity.y <= 0:
+	if event.is_action_pressed('up') && velocity.y == 0:
 		next_velocity = Vector2(0, -speed)
 
 func change_direction():
-	if ! test_move(transform, next_velocity) && next_velocity != velocity:
-		print("collision detected")
+	var snappedPosition = position.snapped(Vector2(12, 12))
+	var testTransform = Transform2D(0, snappedPosition)
+	if velocity != next_velocity && !test_move(testTransform, next_velocity):
+		position = snappedPosition
 		velocity = next_velocity
 
 func world_is_endless():
@@ -36,11 +38,10 @@ func world_is_endless():
 	if position.y < 0:
 		position.y = get_viewport_rect().size.y
 
-
 func _physics_process(_delta):
 	if is_repairing == true:
 		pass
 	else:
-		velocity = move_and_slide (velocity, Vector2( 0, 0 ), false, 1)
 		change_direction()
+		velocity = move_and_slide(velocity)
 		world_is_endless()
