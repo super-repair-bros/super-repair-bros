@@ -2,44 +2,26 @@ extends KinematicBody2D
 
 export (int) var speed = 200
 
-var velocity = Vector2(1, 0)
-var next_direction = 1
-var cur_direction = 1
-# r,l,d,u == 1,2,3,4
+var velocity = Vector2(speed, 0)
+var next_velocity = Vector2(speed, 0)
 
 func _ready():
 	$AnimationPlayer.play("idle")
 
 func get_input():
-	if Input.is_action_pressed('right') && cur_direction != 2:
-		next_direction = 1
-	if Input.is_action_pressed('left') && cur_direction != 1:
-		next_direction = 2
-	if Input.is_action_pressed('down') && cur_direction != 4:
-		next_direction = 3
-	if Input.is_action_pressed('up') && cur_direction != 3:
-		next_direction = 4
+	if Input.is_action_pressed('right') && velocity.x >= 0:
+		next_velocity = Vector2(speed, 0)
+	if Input.is_action_pressed('left') && velocity.x <= 0:
+		next_velocity = Vector2(-speed, 0)
+	if Input.is_action_pressed('down') && velocity.y >= 0:
+		next_velocity = Vector2(0, speed)
+	if Input.is_action_pressed('up') && velocity.y <= 0:
+		next_velocity = Vector2(0, -speed)
 
 func change_direction():
-	if next_direction != cur_direction && not is_on_wall():
-		if next_direction == 1:
-			velocity.x = 1
-			velocity.y = 0
-			cur_direction = next_direction;
-		if next_direction == 2:
-			velocity.x = -1
-			velocity.y = 0
-			cur_direction = next_direction;
-		if next_direction == 3:
-			velocity.x = 0
-			velocity.y = 1
-			cur_direction = next_direction;
-		if next_direction == 4:
-			velocity.x = 0
-			velocity.y = -1
-			cur_direction = next_direction;
-
-	velocity = velocity.normalized() * speed
+	if ! test_move(transform, next_velocity) && next_velocity != velocity:
+		print("collision detected")
+		velocity = next_velocity
 
 func world_is_endless():
 	if position.x > get_viewport_rect().size.x:
