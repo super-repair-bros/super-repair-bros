@@ -3,12 +3,12 @@ image: barichello/godot-ci:3.2
 stages:
     - build
 
-html5:
+web:
     stage: build
     before_script:
         - mkdir -p build/web
     script:
-        - godot -v --export "HTML5" ./build/web/index.html
+        - godot --export "HTML5" ./build/web/index.html
     artifacts:
         paths:
             - build/web
@@ -18,8 +18,19 @@ linux:
     before_script:
         - mkdir -p build/linux
     script:
-        - godot -v --export "Linux/X11" ./build/linux/super-repair-bros.x86_64
+        - godot --export "Linux/X11" ./build/linux/super-repair-bros.x86_64
     artifacts:
         paths:
             - build/linux
+pages:
+    stage: deploy
+    dependencies:
+        - web
+    before_script:
+        - mkdir public
+    script:
+        - mv build/web/* ./public
+    artifacts:
+        paths:
+            - public
 
