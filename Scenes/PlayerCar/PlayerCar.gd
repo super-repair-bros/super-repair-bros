@@ -34,7 +34,6 @@ func calculate_swipe(swipe_end):
 		return
 
 	var swipe = swipe_end - swipe_start
-	print(swipe)
 	if abs(swipe.x) > minimum_drag && velocity.x == 0:
 		# right
 		if swipe.x > 0:
@@ -56,6 +55,8 @@ func change_direction():
 	if velocity != next_velocity && !test_move(testTransform, next_velocity.clamped(3)):
 		position = snappedPosition
 		velocity = next_velocity
+	elif test_move(testTransform, velocity.clamped(2)):
+		velocity = Vector2(0, 0)
 
 func world_is_endless():
 	if position.x > get_viewport_rect().size.x:
