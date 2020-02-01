@@ -11,16 +11,14 @@ func _ready():
 	$AnimationPlayer.play("idle")
 
 func _input(event):
-	if (event is InputEventKey and event.pressed):
-		var key = event.as_text()
-		if 'Right' == key && velocity.x >= 0:
-			next_velocity = Vector2(speed, 0)
-		if 'Left' == key && velocity.x <= 0:
-			next_velocity = Vector2(-speed, 0)
-		if 'Down' == key && velocity.y >= 0:
-			next_velocity = Vector2(0, speed)
-		if 'Up' == key && velocity.y <= 0:
-			next_velocity = Vector2(0, -speed)
+	if event.is_action_pressed('right') && velocity.x >= 0:
+		next_velocity = Vector2(speed, 0)
+	if event.is_action_pressed('left') && velocity.x <= 0:
+		next_velocity = Vector2(-speed, 0)
+	if event.is_action_pressed('down') && velocity.y >= 0:
+		next_velocity = Vector2(0, speed)
+	if event.is_action_pressed('up') && velocity.y <= 0:
+		next_velocity = Vector2(0, -speed)
 
 func change_direction():
 	if ! test_move(transform, next_velocity) && next_velocity != velocity:
