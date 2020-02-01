@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TitleLabel.png-470a75202c22098dab14b318622b74bd.stex"
+path="res://.import/loading_part2.png-1d05478d4bb4c8632d309862d9fd6845.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/menus/TitleLabel.png"
-dest_files=[ "res://.import/TitleLabel.png-470a75202c22098dab14b318622b74bd.stex" ]
+source_file="res://Assets/Graphics/objects/loading_part2.png"
+dest_files=[ "res://.import/loading_part2.png-1d05478d4bb4c8632d309862d9fd6845.stex" ]
 
 [params]
 

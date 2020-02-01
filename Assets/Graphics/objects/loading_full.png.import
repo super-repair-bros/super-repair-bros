@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ContinueLabel.png-4f8ec3baf68b8e3f615ce1c803736360.stex"
+path="res://.import/loading_full.png-7077688df209e2bfaef37d731ed82ee9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/menus/ContinueLabel.png"
-dest_files=[ "res://.import/ContinueLabel.png-4f8ec3baf68b8e3f615ce1c803736360.stex" ]
+source_file="res://Assets/Graphics/objects/loading_full.png"
+dest_files=[ "res://.import/loading_full.png-7077688df209e2bfaef37d731ed82ee9.stex" ]
 
 [params]
 
