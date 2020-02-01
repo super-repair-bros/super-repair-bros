@@ -10,7 +10,8 @@ html5:
     script:
         - godot -v --export "HTML5" ./build/web/index.html
     artifacts:
-        - build/web
+        paths:
+            - build/web
 
 linux:
     stage: build
@@ -19,5 +20,6 @@ linux:
     script:
         - godot -v --export "Linux/X11" ./build/linux/super-repair-bros.x86_64
     artifacts:
-        - build/linux
+        paths:
+            - build/linux
 
