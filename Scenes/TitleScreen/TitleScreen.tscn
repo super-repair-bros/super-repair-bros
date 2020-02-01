@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/TitleScreen/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Graphics/menus/VersionLabel.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Graphics/menus/Characters.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Graphics/PlatzhalterCar.jpg" type="Texture" id=3]
 [ext_resource path="res://Assets/Graphics/text/text_new_game.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Graphics/logo/super_repair_bros_logo.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Graphics/menus/OptionsLabel.png" type="Texture" id=6]
@@ -13,8 +13,10 @@
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 128.0
-margin_bottom = -24.0
+margin_right = 960.0
+margin_bottom = 480.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -32,12 +34,13 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainMenu"]
-margin_right = 1074.0
-margin_bottom = 401.0
+margin_right = 912.0
+margin_bottom = 416.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/HBoxContainer"]
 margin_right = 456.0
-margin_bottom = 401.0
+margin_bottom = 416.0
+size_flags_vertical = 3
 
 [node name="TitleLabel" type="TextureRect" parent="MainMenu/HBoxContainer/VBoxContainer"]
 margin_right = 456.0
@@ -47,55 +50,53 @@ texture = ExtResource( 5 )
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/HBoxContainer/VBoxContainer"]
 margin_top = 68.0
 margin_right = 456.0
-margin_bottom = 335.0
+margin_bottom = 350.0
 size_flags_vertical = 3
 custom_constants/separation = 30
 alignment = 1
 
 [node name="NewGameLabel" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 32.0
+margin_top = 40.0
 margin_right = 456.0
-margin_bottom = 80.0
+margin_bottom = 88.0
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 9 )
-texture_focused = ExtResource( 9 )
 
 [node name="CreditsLabel" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 110.0
+margin_top = 118.0
 margin_right = 456.0
-margin_bottom = 158.0
+margin_bottom = 166.0
 texture_normal = ExtResource( 7 )
 texture_hover = ExtResource( 8 )
-texture_focused = ExtResource( 8 )
 
 [node name="ExitLabel" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 188.0
+margin_top = 196.0
 margin_right = 456.0
-margin_bottom = 234.0
+margin_bottom = 242.0
 texture_normal = ExtResource( 6 )
 
 [node name="VersionLabel" type="TextureRect" parent="MainMenu/HBoxContainer/VBoxContainer"]
-margin_top = 339.0
+margin_top = 354.0
 margin_right = 456.0
-margin_bottom = 401.0
+margin_bottom = 416.0
 texture = ExtResource( 2 )
 
 [node name="CenterContainer" type="CenterContainer" parent="MainMenu/HBoxContainer"]
 margin_left = 460.0
-margin_right = 1074.0
-margin_bottom = 401.0
+margin_right = 912.0
+margin_bottom = 416.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Characters" type="TextureRect" parent="MainMenu/HBoxContainer/CenterContainer"]
-margin_left = 40.0
-margin_top = 31.0
-margin_right = 573.0
-margin_bottom = 370.0
+margin_left = 222.0
+margin_top = 204.0
+margin_right = 230.0
+margin_bottom = 212.0
 texture = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 75.7607, 15.7323 )
+position = Vector2( 0.807358, 0.175949 )
 anchor_mode = 0
 current = true
 zoom = Vector2( 6, 6 )
