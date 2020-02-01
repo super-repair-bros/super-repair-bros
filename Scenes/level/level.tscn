@@ -268,7 +268,7 @@ script = ExtResource( 2 )
 
 [node name="MyCar" parent="." instance=ExtResource( 3 )]
 position = Vector2( 12, 12 )
-collision/safe_margin = 0
+collision/safe_margin = 0.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MyCar"]
 stream = ExtResource( 9 )
