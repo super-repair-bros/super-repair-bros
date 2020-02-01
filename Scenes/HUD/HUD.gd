@@ -37,3 +37,7 @@ func refreshTime():
 
 func refreshScore():
 	$"HBoxContainer/score".text = "Score: %s" % score;
+
+
+func _on_level_successfully_repaired():
+	pass # Replace with function body.
