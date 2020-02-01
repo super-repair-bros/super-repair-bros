@@ -284,7 +284,7 @@ one_shot = true
 [node name="Wrack" parent="." instance=ExtResource( 10 )]
 
 [node name="GameOver" parent="." instance=ExtResource( 12 )]
-
+[connection signal="successfully_repaired" from="." to="GUI" method="_on_level_successfully_repaired"]
 [connection signal="timeout" from="MyCar/RepairTimer" to="." method="_on_RepairTimer_timeout"]
 [connection signal="GameOver" from="GUI" to="." method="_on_GUI_GameOver"]
 [connection signal="is_repaired" from="Wrack" to="." method="_on_Wrack_is_repaired"]
