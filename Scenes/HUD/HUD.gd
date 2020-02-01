@@ -3,13 +3,9 @@ extends Node
 signal GameOver;
 
 export var timeInSec = 20;
+export var scorePerRepair = 10;
 
-export var score = 0;
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var score = 0;
 
 
 # Called when the node enters the scene tree for the first time.
@@ -40,4 +36,5 @@ func refreshScore():
 
 
 func _on_level_successfully_repaired():
-	pass # Replace with function body.
+	score = score + scorePerRepair
+	refreshScore()
