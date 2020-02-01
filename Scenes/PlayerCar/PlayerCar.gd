@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export (int) var speed = 200
 
-var velocity = Vector2(0, 1)
+var velocity = Vector2(1, 0)
 var next_direction = 1
 var cur_direction = 1
 # r,l,d,u == 1,2,3,4
@@ -36,7 +36,7 @@ func get_input():
 			cur_direction = next_direction;
 
 	velocity = velocity.normalized() * speed
-	
+
 	if position.x > get_viewport_rect().size.x:
 		position.x = 0
 	if position.y > get_viewport_rect().size.y:
@@ -49,4 +49,4 @@ func get_input():
 
 func _physics_process(_delta):
 	get_input()
-	velocity = move_and_slide(velocity)
+	velocity = move_and_slide (velocity, Vector2( 0, 0 ), false, 10)
