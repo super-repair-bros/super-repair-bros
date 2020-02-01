@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Wrack/Wrack.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3.00245, 3.58297 )
+extents = Vector2( 3.2399, 3.6412 )
 
 [sub_resource type="Animation" id=2]
 length = 0.4
@@ -39,14 +39,13 @@ tracks/1/keys = {
 script = ExtResource( 3 )
 
 [node name="Arrow" type="Sprite" parent="."]
-position = Vector2( 0, -10.801 )
+position = Vector2( 3.8147e-06, -7.63291 )
 texture = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="BrokenCar" type="Sprite" parent="StaticBody2D"]
 texture = ExtResource( 1 )
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 0, -0.485968 )
