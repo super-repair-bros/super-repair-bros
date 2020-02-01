@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Wrack/Wrack.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 2.44988, 2.46822 )
+extents = Vector2( 3, 3 )
 
 [sub_resource type="Animation" id=2]
 length = 0.4
