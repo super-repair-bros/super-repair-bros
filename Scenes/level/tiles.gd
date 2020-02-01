@@ -3,7 +3,7 @@ extends TileMap
 export var levelwidht = 8
 export var levelheight = 4
 
-const NUMTILES = 3
+const NUMTILES = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
