@@ -2,23 +2,41 @@ extends KinematicBody2D
 
 export (int) var speed = 200
 
-var velocity = Vector2()
+var velocity = Vector2(0, 1)
+var next_direction = 1
+var cur_direction = 1
+# r,l,d,u == 1,2,3,4
 
 func get_input():
 	if Input.is_action_pressed('right'):
-		velocity = Vector2()
-		velocity.x += 1
+		next_direction = 1
 	if Input.is_action_pressed('left'):
-		velocity = Vector2()
-		velocity.x -= 1
+		next_direction = 2
 	if Input.is_action_pressed('down'):
-		velocity = Vector2()
-		velocity.y += 1
+		next_direction = 3
 	if Input.is_action_pressed('up'):
-		velocity = Vector2()
-		velocity.y -= 1
+		next_direction = 4
+
+	if next_direction != cur_direction && not is_on_wall():
+		if next_direction == 1:
+			velocity.x = 1
+			velocity.y = 0
+			cur_direction = next_direction;
+		if next_direction == 2:
+			velocity.x = -1
+			velocity.y = 0
+			cur_direction = next_direction;
+		if next_direction == 3:
+			velocity.x = 0
+			velocity.y = 1
+			cur_direction = next_direction;
+		if next_direction == 4:
+			velocity.x = 0
+			velocity.y = -1
+			cur_direction = next_direction;
+
 	velocity = velocity.normalized() * speed
-	
+
 	if position.x > get_viewport().size.x:
 		position.x = 0
 	if position.y > get_viewport().size.y:

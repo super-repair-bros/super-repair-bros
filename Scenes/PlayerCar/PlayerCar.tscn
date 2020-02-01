@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Graphics/objects/repair_car.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3.06412, 3.00299 )
+extents = Vector2( 4, 4 )
 
 [node name="MyCar" type="KinematicBody2D"]
 script = ExtResource( 1 )
