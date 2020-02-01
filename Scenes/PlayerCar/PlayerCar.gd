@@ -36,17 +36,17 @@ func get_input():
 			cur_direction = next_direction;
 
 	velocity = velocity.normalized() * speed
-
-	if position.x > get_viewport().size.x:
+	
+	if position.x > get_viewport_rect().size.x:
 		position.x = 0
-	if position.y > get_viewport().size.y:
+	if position.y > get_viewport_rect().size.y:
 		position.y = 0
 	if position.x < 0:
-		position.x = get_viewport().size.x
+		position.x = get_viewport_rect().size.x
 	if position.y < 0:
-		position.y = get_viewport().size.y
+		position.y = get_viewport_rect().size.y
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)

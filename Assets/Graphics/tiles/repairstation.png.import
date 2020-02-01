@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crossroads.png-111b79493989195511ae140b6f0b71c0.stex"
+path="res://.import/repairstation.png-a070133aa47a39d4f898fbb4535750ab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/tiles/crossroads.png"
-dest_files=[ "res://.import/crossroads.png-111b79493989195511ae140b6f0b71c0.stex" ]
+source_file="res://Assets/Graphics/tiles/repairstation.png"
+dest_files=[ "res://.import/repairstation.png-a070133aa47a39d4f898fbb4535750ab.stex" ]
 
 [params]
 

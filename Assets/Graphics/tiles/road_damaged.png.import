@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crossroads.png-111b79493989195511ae140b6f0b71c0.stex"
+path="res://.import/road_damaged.png-8ce136ed719b727610ee185227d680ff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/tiles/crossroads.png"
-dest_files=[ "res://.import/crossroads.png-111b79493989195511ae140b6f0b71c0.stex" ]
+source_file="res://Assets/Graphics/tiles/road_damaged.png"
+dest_files=[ "res://.import/road_damaged.png-8ce136ed719b727610ee185227d680ff.stex" ]
 
 [params]
 
