@@ -11,13 +11,13 @@ func _ready():
 	$AnimationPlayer.play("idle")
 
 func get_input():
-	if Input.is_action_pressed('right'):
+	if Input.is_action_pressed('right') && cur_direction != 2:
 		next_direction = 1
-	if Input.is_action_pressed('left'):
+	if Input.is_action_pressed('left') && cur_direction != 1:
 		next_direction = 2
-	if Input.is_action_pressed('down'):
+	if Input.is_action_pressed('down') && cur_direction != 4:
 		next_direction = 3
-	if Input.is_action_pressed('up'):
+	if Input.is_action_pressed('up') && cur_direction != 3:
 		next_direction = 4
 
 	if next_direction != cur_direction && not is_on_wall():
