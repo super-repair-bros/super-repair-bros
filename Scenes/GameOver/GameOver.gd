@@ -14,7 +14,9 @@ func _on_Timer_timeout():
 	refresh();
 	
 	if timeout <= 0:
-		get_tree().change_scene("res://Scenes/TitleScreen/TitleScreen.tscn")
+		var tree = get_tree();
+		tree.change_scene("res://Scenes/TitleScreen/TitleScreen.tscn")
+		tree.paused = false;
 
 func refresh():
 	$"GameOver".text = "Game over (%s)" % timeout

@@ -9,3 +9,4 @@ func _on_Wrack_is_repaired():
 
 func _on_GUI_GameOver():
 	$"GameOver".show();
+	get_tree().paused = true
