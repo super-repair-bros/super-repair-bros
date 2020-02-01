@@ -1,12 +1,14 @@
 extends Node2D
 
 signal wrackplease
+signal is_repaired
 
 export var WRACKWIDTH = 8
 export var WRACKHEIGHT = 8
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimationPlayer.play("broken")
 	emit_signal('wrackplease')
 	
 func place_a_wrack():
@@ -24,6 +26,12 @@ func place_a_wrack():
 		position.x = posx
 		position.y = posy
 		# Check for collision
+		placed = true
+
+
+func _on_Area2D_body_entered(body):
+	emit_signal("is_repaired")
+
 		var query = Physics2DShapeQueryParameters.new()
 
 		if spaceState.intersect_point(upperright) and spaceState.intersect_point(upperleft) and spaceState.intersect_point(lowerright) and spaceState.intersect_point(lowerleft):
