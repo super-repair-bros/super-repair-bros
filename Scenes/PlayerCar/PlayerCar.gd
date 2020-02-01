@@ -9,6 +9,7 @@ var next_velocity = Vector2(speed, 0)
 
 func _ready():
 	$AnimationPlayer.play("idle")
+	$RepairBar.play("default")
 
 func _input(event):
 	if (event is InputEventKey and event.pressed):

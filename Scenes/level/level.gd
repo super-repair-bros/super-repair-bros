@@ -7,6 +7,8 @@ func _on_Wrack_is_repaired():
 	$MyCar/CollisionShape2D.set_deferred("disabled", true)
 	$MyCar.set_deferred("is_repairing", true)
 	$MyCar/AnimationPlayer.play("repair")
+	$MyCar/AnimationPlayer.play("repair_bar")
+	$MyCar/RepairBar.play("repair_bar")
 	$Wrack/AudioStreamPlayer2D.play()
 	$MyCar/RepairTimer.start()
 
@@ -16,6 +18,8 @@ func _on_RepairTimer_timeout():
 	$MyCar/CollisionShape2D.set_deferred("disabled", false)
 	$MyCar.set_deferred("is_repairing", false)
 	$MyCar/AnimationPlayer.play("idle")
+	$MyCar/AnimatedSprite.play("idle")
+	$MyCar/RepairBar.play("default")
 	$Wrack.set_deferred("isplaced", false)
 
 func _on_GUI_GameOver():
