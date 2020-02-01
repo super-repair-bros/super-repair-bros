@@ -1,0 +1,23 @@
+image: barichello/godot-ci:3.2
+
+stages:
+    - build
+
+html5:
+    stage: build
+    before_script:
+        - mkdir build/web
+    script:
+        - godot -v --export "HTML5" ./build/web/index.html
+    artifacts:
+        - build/web
+
+linux:
+    stage: build
+    before_script:
+        - mkdir build/linux
+    script:
+        - godot -v --export "Linux/X11" ./build/linux/super-repair-bros.x86_64
+    artifacts:
+        - build/linux
+
