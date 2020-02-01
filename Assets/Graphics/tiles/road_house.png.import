@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/repair_car.png-0fb25078e6e15119b62d3e03fdad13b2.stex"
+path="res://.import/road_house.png-2e578efa805b5a3a5432a851571eb2ac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/objects/repair_car.png"
-dest_files=[ "res://.import/repair_car.png-0fb25078e6e15119b62d3e03fdad13b2.stex" ]
+source_file="res://Assets/Graphics/tiles/road_house.png"
+dest_files=[ "res://.import/road_house.png-2e578efa805b5a3a5432a851571eb2ac.stex" ]
 
 [params]
 
