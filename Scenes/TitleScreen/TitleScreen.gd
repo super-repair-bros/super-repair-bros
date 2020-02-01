@@ -24,4 +24,4 @@ func _on_CreditsLabel_pressed():
 
 
 func _on_ExitLabel_pressed():
-	pass # Replace with function body.
+	get_tree().quit()
