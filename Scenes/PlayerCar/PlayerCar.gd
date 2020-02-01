@@ -8,7 +8,8 @@ var cur_direction = 1
 # r,l,d,u == 1,2,3,4
 
 func _ready():
-	$AnimationPlayer.play("idle")
+	#$AnimationPlayer.play("idle")
+	pass
 
 func get_input():
 	if Input.is_action_pressed('right'):
