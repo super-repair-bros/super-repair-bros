@@ -19,7 +19,7 @@ func get_input():
 		next_velocity = Vector2(0, -speed)
 
 func change_direction():
-	if ! test_move(transform, next_velocity) && next_velocity != velocity:
+	if velocity != next_velocity && ! test_move(transform, next_velocity):
 		velocity = next_velocity
 
 func world_is_endless():
@@ -35,6 +35,6 @@ func world_is_endless():
 
 func _physics_process(_delta):
 	get_input()
-	velocity = move_and_slide (velocity, Vector2( 0, 0 ), false, 1)
 	change_direction()
+	velocity = move_and_slide (velocity, Vector2( 0, 0 ), false, 1)
 	world_is_endless()
