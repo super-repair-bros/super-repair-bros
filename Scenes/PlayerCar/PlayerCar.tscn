@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/Graphics/objects/repair_car_blink1.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3.06412, 3.00299 )
+extents = Vector2( 3, 3 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {

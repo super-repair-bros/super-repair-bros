@@ -25,16 +25,16 @@ points = PoolVector2Array( 8, 24, 0, 24, 0, 16, 8, 16 )
 points = PoolVector2Array( 24, 24, 16, 24, 16, 16, 24, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
-points = PoolVector2Array( 8.21782, 8.02402, 0.271751, 8.02402, 0.271751, 0.271751, 8.21782, 0.271751 )
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
-points = PoolVector2Array( 24, 8.02402, 16.1639, 8.02402, 16.1639, 0.271751, 24, 0.271751 )
+points = PoolVector2Array( 24, 8, 16, 8, 16, 0, 24, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=7]
-points = PoolVector2Array( 8.21783, 24, 0.0779495, 24, 0.0779495, 16.1639, 8.21783, 16.1639 )
+points = PoolVector2Array( 8, 24, 0, 24, 0, 16, 8, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
-points = PoolVector2Array( 24, 24, 16.1639, 24, 16.1639, 16.1639, 24, 16.1639 )
+points = PoolVector2Array( 24, 24, 16, 24, 16, 16, 24, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=9]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
@@ -259,11 +259,16 @@ script = ExtResource( 11 )
 [node name="tiles" type="TileMap" parent="."]
 tile_set = SubResource( 22 )
 cell_size = Vector2( 24, 24 )
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+cell_tile_origin = 1
+collision_friction = 0.0
 format = 1
 tile_data = PoolIntArray( 0, 0, 0 )
 script = ExtResource( 2 )
 
 [node name="MyCar" parent="." instance=ExtResource( 3 )]
+position = Vector2( 12, 12 )
+collision/safe_margin = 0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MyCar"]
 stream = ExtResource( 9 )
