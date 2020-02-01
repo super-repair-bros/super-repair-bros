@@ -1,0 +1,48 @@
+image: barichello/godot-ci:3.2
+
+stages:
+    - build
+    - release
+
+web:
+    stage: build
+    before_script:
+        - mkdir -p build/web
+    script:
+        - godot --export "HTML5" ./build/web/index.html
+    artifacts:
+        paths:
+            - build/web
+
+linux:
+    stage: build
+    before_script:
+        - mkdir -p build/linux
+    script:
+        - godot --export "Linux/X11" ./build/linux/super-repair-bros.x86_64
+    artifacts:
+        paths:
+            - build/linux
+
+windows:
+    stage: build
+    before_script:
+        - mkdir -p build/windows
+    script:
+        - godot --export "Windows Desktop" ./build/windows/super-repair-bros.exe
+    artifacts:
+        paths:
+            - build/windows
+
+pages:
+    stage: release
+    dependencies:
+        - web
+    before_script:
+        - mkdir public
+    script:
+        - mv build/web/* ./public
+    artifacts:
+        paths:
+            - public
+
