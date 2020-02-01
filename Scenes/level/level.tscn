@@ -273,6 +273,7 @@ collision/safe_margin = 0
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MyCar"]
 stream = ExtResource( 9 )
 autoplay = true
+bus = "car bus"
 
 [node name="RepairTimer" type="Timer" parent="MyCar"]
 one_shot = true

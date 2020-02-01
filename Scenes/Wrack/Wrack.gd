@@ -42,5 +42,6 @@ func place_a_wrack():
 
 func _on_Area2D_body_entered(body):
 	if ('MyCar' == body.name):
+		$Area2D/BrokenCar/AudioStreamPlayer2D.play()
 		emit_signal("is_repaired")
 
