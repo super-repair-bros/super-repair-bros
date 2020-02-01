@@ -1,3 +1,46 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Graphics/objects/damaged_car.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Graphics/objects/pointer.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "broken"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("BrokenCar:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Arrow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.8147e-06, -7.63291 ), Vector2( 0, -8.533 ) ]
+}
 
 [node name="Wrack" type="Node2D"]
+
+[node name="Arrow" type="Sprite" parent="."]
+position = Vector2( 1.27271e-06, -8.2327 )
+texture = ExtResource( 2 )
+
+[node name="BrokenCar" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/broken = SubResource( 1 )

@@ -258,3 +258,7 @@ format = 1
 script = ExtResource( 2 )
 
 [node name="MyCar" parent="." instance=ExtResource( 3 )]
+
+[node name="WrackSpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+[connection signal="timeout" from="WrackSpawnTimer" to="tiles" method="_on_WrackSpawnTimer_timeout"]

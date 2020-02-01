@@ -17,3 +17,7 @@ func _ready():
 			else:
 				# Special tile
 				set_cell(lvlx, lvly, randi() % (NUMTILES-1) + 1);
+
+
+func _on_WrackSpawnTimer_timeout():
+	pass # Replace with function body.
