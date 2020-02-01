@@ -14,3 +14,6 @@ func _on_RepairTimer_timeout():
 	$MyCar.set_deferred("is_repairing", false)
 	$MyCar/AnimationPlayer.play("idle")
 
+func _on_GUI_GameOver():
+	$"GameOver".show();
+
