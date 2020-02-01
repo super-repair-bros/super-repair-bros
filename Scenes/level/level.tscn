@@ -275,5 +275,6 @@ one_shot = true
 [node name="GUI" parent="." instance=ExtResource( 6 )]
 
 [node name="Wrack" parent="." instance=ExtResource( 10 )]
+[connection signal="timeout" from="MyCar/RepairTimer" to="." method="_on_RepairTimer_timeout"]
 [connection signal="is_repaired" from="Wrack" to="." method="_on_Wrack_is_repaired"]
-[connection signal="wrackplease" from="Wrack" to="Wrack" method="place_a_wrack"]
+[connection signal="wrackplease" from="Wrack" to="Wrack" method="try_to_place_a_wrack"]

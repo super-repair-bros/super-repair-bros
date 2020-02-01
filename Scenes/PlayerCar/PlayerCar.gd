@@ -3,6 +3,7 @@ extends KinematicBody2D
 export (int) var speed = 200
 
 var velocity = Vector2()
+export (bool) var is_repairing = false
 
 func _ready():
 	$AnimationPlayer.play("idle")
@@ -33,5 +34,8 @@ func get_input():
 
 
 func _physics_process(_delta):
-	get_input()
-	velocity = move_and_slide(velocity)
+	if is_repairing == true:
+		pass
+	else:
+		get_input()
+		velocity = move_and_slide(velocity)
