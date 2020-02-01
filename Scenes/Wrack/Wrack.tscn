@@ -26,16 +26,16 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 3.8147e-06, -7.63291 ), Vector2( 0, -8.533 ) ]
+"values": [ Vector2( 3.8147e-06, -7.63291 ), Vector2( 0, -9.915 ), Vector2( 0, -10.801 ), Vector2( 0, -9.316 ), Vector2( 3.8147e-06, -7.63291 ) ]
 }
 
 [node name="Wrack" type="Node2D"]
 
 [node name="Arrow" type="Sprite" parent="."]
-position = Vector2( 1.27271e-06, -8.2327 )
+position = Vector2( 0, -10.3476 )
 texture = ExtResource( 2 )
 
 [node name="BrokenCar" type="Sprite" parent="."]
