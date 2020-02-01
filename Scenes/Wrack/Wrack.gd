@@ -26,13 +26,12 @@ func place_a_wrack():
 		position.x = posx
 		position.y = posy
 		# Check for collision
-<<<<<<< HEAD
 		placed = true
 
 
 func _on_Area2D_body_entered(body):
 	emit_signal("is_repaired")
-=======
+
 		var query = Physics2DShapeQueryParameters.new()
 
 		if spaceState.intersect_point(upperright) and spaceState.intersect_point(upperleft) and spaceState.intersect_point(lowerright) and spaceState.intersect_point(lowerleft):
@@ -45,4 +44,3 @@ func _on_Area2D_body_entered(body):
 			print("lowerright: " + str(spaceState.intersect_point(lowerright)))
 			print("lowerleft: " + str(spaceState.intersect_point(lowerleft)))			
 			placed = true
->>>>>>> caacec9ab420d05c4e534b8994a4ec346b82687c
