@@ -23,6 +23,17 @@ linux:
     artifacts:
         paths:
             - build/linux
+
+windows:
+    stage: build
+    before_script:
+        - mkdir -p build/windows
+    script:
+        - godot --export "Windows Desktop" ./build/windows/super-repair-bros.exe
+    artifacts:
+        paths:
+            - build/windows
+
 pages:
     stage: release
     dependencies:
