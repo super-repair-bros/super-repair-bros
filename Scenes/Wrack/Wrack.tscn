@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Graphics/objects/damaged_car.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Graphics/objects/pointer.png" type="Texture" id=2]
