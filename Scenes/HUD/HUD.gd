@@ -4,7 +4,7 @@ signal GameOver;
 
 export var timeInSec = 20;
 
-var score = 0;
+export var score = 0;
 
 
 # Declare member variables here. Examples:

@@ -50,3 +50,4 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/broken = SubResource( 2 )
+[connection signal="wrackplease" from="." to="." method="placewrack"]

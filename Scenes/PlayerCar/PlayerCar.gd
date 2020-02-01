@@ -1,9 +1,11 @@
 extends KinematicBody2D
 
 export (int) var speed = 200
+export (bool) var is_repairing = false
 
 var velocity = Vector2(speed, 0)
 var next_velocity = Vector2(speed, 0)
+
 
 func _ready():
 	$AnimationPlayer.play("idle")
@@ -37,7 +39,9 @@ func world_is_endless():
 
 
 func _physics_process(_delta):
-
-	velocity = move_and_slide (velocity, Vector2( 0, 0 ), false, 1)
-	change_direction()
-	world_is_endless()
+	if is_repairing == true:
+		pass
+	else:
+		velocity = move_and_slide (velocity, Vector2( 0, 0 ), false, 1)
+		change_direction()
+		world_is_endless()

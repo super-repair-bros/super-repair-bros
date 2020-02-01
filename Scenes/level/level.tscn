@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Assets/Graphics/tiles/crossroads.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/level/tiles.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Sounds/car.wav" type="AudioStream" id=9]
 [ext_resource path="res://Scenes/Wrack/Wrack.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/level/level.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/GameOver/GameOver.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
@@ -281,5 +282,10 @@ one_shot = true
 [node name="GUI" parent="." instance=ExtResource( 6 )]
 
 [node name="Wrack" parent="." instance=ExtResource( 10 )]
+
+[node name="GameOver" parent="." instance=ExtResource( 12 )]
+
+[connection signal="timeout" from="MyCar/RepairTimer" to="." method="_on_RepairTimer_timeout"]
+[connection signal="GameOver" from="GUI" to="." method="_on_GUI_GameOver"]
 [connection signal="is_repaired" from="Wrack" to="." method="_on_Wrack_is_repaired"]
-[connection signal="wrackplease" from="Wrack" to="Wrack" method="place_a_wrack"]
+[connection signal="wrackplease" from="Wrack" to="Wrack" method="try_to_place_a_wrack"]
