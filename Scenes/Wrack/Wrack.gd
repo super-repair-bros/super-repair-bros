@@ -41,4 +41,6 @@ func place_a_wrack():
 			placed = true
 
 func _on_Area2D_body_entered(body):
-	emit_signal("is_repaired")
+	if ('MyCar' == body.name):
+		emit_signal("is_repaired")
+
