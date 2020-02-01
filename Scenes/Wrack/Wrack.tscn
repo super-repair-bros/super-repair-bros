@@ -4,12 +4,14 @@
 [ext_resource path="res://Assets/Graphics/objects/pointer.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Wrack/Wrack.gd" type="Script" id=3]
 
-[sub_resource type="Animation" id=1]
-resource_name = "broken"
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.00245, 3.58297 )
+
+[sub_resource type="Animation" id=2]
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("BrokenCar:flip_h")
+tracks/0/path = NodePath("StaticBody2D/BrokenCar:flip_h")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -37,12 +39,18 @@ tracks/1/keys = {
 script = ExtResource( 3 )
 
 [node name="Arrow" type="Sprite" parent="."]
-position = Vector2( 0, -10.3476 )
+position = Vector2( 0, -10.801 )
 texture = ExtResource( 2 )
 
-[node name="BrokenCar" type="Sprite" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="BrokenCar" type="Sprite" parent="StaticBody2D"]
 texture = ExtResource( 1 )
 flip_h = true
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, -0.485968 )
+shape = SubResource( 1 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/broken = SubResource( 1 )
+anims/broken = SubResource( 2 )
