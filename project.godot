@@ -21,8 +21,10 @@ config/icon="res://icon.png"
 
 [display]
 
+window/size/width=480
+window/size/height=270
 window/stretch/mode="2d"
-window/stretch/shrink=4.0
+window/stretch/aspect="keep"
 
 [input]
 
