@@ -1,9 +1,11 @@
 extends Node2D
 
 signal wrackplease
+signal is_repaired
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimationPlayer.play("broken")
 	emit_signal('wrackplease')
 	
 func place_a_wrack():
@@ -14,3 +16,7 @@ func place_a_wrack():
 		position.y = randi() % int(get_viewport_rect().size.y) + 1
 		# Check for collision
 		placed = true
+
+
+func _on_Area2D_body_entered(body):
+	emit_signal("is_repaired")

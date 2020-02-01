@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/TitleScreen/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Graphics/menus/VersionLabel.png" type="Texture" id=2]
@@ -6,8 +6,6 @@
 [ext_resource path="res://Assets/Graphics/menus/NewGameLabel.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Graphics/menus/TitleLabel.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Graphics/menus/OptionsLabel.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Graphics/text/text_credits.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Graphics/text/text_credits_focus.png" type="Texture" id=8]
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
@@ -52,23 +50,20 @@ custom_constants/separation = 30
 alignment = 1
 
 [node name="NewGameLabel" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 39.0
 margin_right = 537.0
-margin_bottom = 75.0
+margin_bottom = 36.0
 texture_normal = ExtResource( 4 )
 
 [node name="CreditsLabel" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 105.0
+margin_top = 66.0
 margin_right = 537.0
-margin_bottom = 141.0
-texture_normal = ExtResource( 7 )
-texture_hover = ExtResource( 8 )
-texture_focused = ExtResource( 8 )
+margin_bottom = 112.0
+texture_normal = ExtResource( 6 )
 
 [node name="ExitLabel" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 171.0
+margin_top = 142.0
 margin_right = 537.0
-margin_bottom = 217.0
+margin_bottom = 188.0
 texture_normal = ExtResource( 6 )
 
 [node name="VersionLabel" type="TextureRect" parent="MainMenu/HBoxContainer/VBoxContainer"]
