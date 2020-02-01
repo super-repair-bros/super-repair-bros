@@ -1,5 +1,7 @@
 extends Node2D
 
+signal successfully_repaired
+
 func _on_Wrack_is_repaired():
 	$MyCar.move_and_slide(Vector2())
 	$MyCar/CollisionShape2D.set_deferred("disabled", true)
@@ -10,10 +12,11 @@ func _on_Wrack_is_repaired():
 
 
 func _on_RepairTimer_timeout():
-	#$GUI/HBoxContainer.score += $GUI/HBoxContainer.score
+	emit_signal("successfully_repaired")
 	$MyCar/CollisionShape2D.set_deferred("disabled", false)
 	$MyCar.set_deferred("is_repairing", false)
 	$MyCar/AnimationPlayer.play("idle")
+	$Wrack.set_deferred("isplaced", false)
 
 func _on_GUI_GameOver():
 	$"GameOver".show();
