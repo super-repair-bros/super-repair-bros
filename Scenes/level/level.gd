@@ -16,4 +16,4 @@ func _on_RepairTimer_timeout():
 
 func _on_GUI_GameOver():
 	$"GameOver".show();
-
+	get_tree().paused = true
