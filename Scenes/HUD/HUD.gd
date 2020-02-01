@@ -1,5 +1,7 @@
 extends Node
 
+signal GameOver;
+
 export var timeInSec = 20;
 
 var score = 0;
