@@ -18,6 +18,10 @@ func _ready():
 				# Special tile
 				set_cell(lvlx, lvly, randi() % (NUMTILES-1) + 1);
 
+# I don't know why it does not work...
+#func _input(_event):
+#	if Input.is_action_pressed("KEY_ESCAPE"):
+#		get_tree().change_scene("res://Scenes/TitleScreen/TitleScreen.tscn")
 
 func _on_WrackSpawnTimer_timeout():
-	pass # Replace with function body.
+	pass
