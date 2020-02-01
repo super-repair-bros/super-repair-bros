@@ -3,8 +3,6 @@ extends KinematicBody2D
 export (int) var speed = 200
 
 var velocity = Vector2()
-#var current_direction = velocity 
-#var next_direction = Vector2()
 
 func get_input():
 	if Input.is_action_pressed('right'):
@@ -20,7 +18,6 @@ func get_input():
 		velocity = Vector2()
 		velocity.y -= 1
 	velocity = velocity.normalized() * speed
-	#velocity *= speed
 	
 	if position.x > get_viewport().size.x:
 		position.x = 0

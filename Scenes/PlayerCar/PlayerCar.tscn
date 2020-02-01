@@ -8,9 +8,6 @@ extents = Vector2( 3.06412, 3.00299 )
 
 [node name="MyCar" type="KinematicBody2D"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
