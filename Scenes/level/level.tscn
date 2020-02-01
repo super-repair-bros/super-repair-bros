@@ -258,6 +258,7 @@ points = PoolVector2Array( 24, 24, 16, 24, 16, 16, 24, 16 )
 tile_set = SubResource( 22 )
 cell_size = Vector2( 24, 24 )
 format = 1
+tile_data = PoolIntArray( 0, 0, 0 )
 script = ExtResource( 2 )
 
 [node name="MyCar" parent="." instance=ExtResource( 3 )]
@@ -270,3 +271,4 @@ bus = "New Bus"
 [node name="GUI" parent="." instance=ExtResource( 6 )]
 
 [node name="Wrack" parent="." instance=ExtResource( 10 )]
+[connection signal="wrackplease" from="Wrack" to="Wrack" method="place_a_wrack"]
