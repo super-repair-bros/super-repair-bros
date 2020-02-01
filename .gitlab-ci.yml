@@ -2,6 +2,7 @@ image: barichello/godot-ci:3.2
 
 stages:
     - build
+    - release
 
 web:
     stage: build
@@ -23,7 +24,7 @@ linux:
         paths:
             - build/linux
 pages:
-    stage: deploy
+    stage: release
     dependencies:
         - web
     before_script:
