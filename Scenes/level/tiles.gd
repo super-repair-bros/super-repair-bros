@@ -31,10 +31,9 @@ func _ready():
 				if randnum == 2:
 					set_cell(lvlx, lvly, 4)
 
-# I don't know why it does not work...
-#func _input(_event):
-#	if Input.is_action_pressed("KEY_ESCAPE"):
-#		get_tree().change_scene("res://Scenes/TitleScreen/TitleScreen.tscn")
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().change_scene("res://Scenes/TitleScreen/TitleScreen.tscn")
 
 func _on_WrackSpawnTimer_timeout():
 	pass
