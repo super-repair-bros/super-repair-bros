@@ -20,7 +20,7 @@ func _on_NewGameLabel_pressed():
 
 
 func _on_CreditsLabel_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://Scenes/Credits/Credits.tscn")
 
 
 func _on_ExitLabel_pressed():
