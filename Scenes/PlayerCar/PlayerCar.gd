@@ -42,5 +42,5 @@ func _physics_process(_delta):
 	else:
 		get_input()
 		velocity = move_and_slide (velocity, Vector2( 0, 0 ), false, 1)
-	    change_direction()
-	    world_is_endless()
+		change_direction()
+		world_is_endless()
