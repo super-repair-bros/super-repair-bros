@@ -2,6 +2,8 @@ extends Node
 
 export var timeInSec = 20;
 
+var score = 0;
+
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -11,6 +13,7 @@ export var timeInSec = 20;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	refreshTime()
+	refreshScore()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,3 +32,6 @@ func _on_Timer_timeout():
 
 func refreshTime():
 	$"HBoxContainer/time".text = "Time left: %s" % timeInSec;
+
+func refreshScore():
+	$"HBoxContainer/score".text = "Score: %s" % score;
