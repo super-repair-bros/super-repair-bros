@@ -61,3 +61,4 @@ format = 1
 script = ExtResource( 2 )
 
 [node name="MyCar" parent="." instance=ExtResource( 3 )]
+position = Vector2( 540.18, 300.155 )
