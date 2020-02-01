@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/NewGameLabel.png-bb9cd2041861203c687fc3b32daf38b6.stex"
+path="res://.import/loading_empty.png-c950432d38fa095a1a7afa7a354d1bd4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/menus/NewGameLabel.png"
-dest_files=[ "res://.import/NewGameLabel.png-bb9cd2041861203c687fc3b32daf38b6.stex" ]
+source_file="res://Assets/Graphics/objects/loading_empty.png"
+dest_files=[ "res://.import/loading_empty.png-c950432d38fa095a1a7afa7a354d1bd4.stex" ]
 
 [params]
 
