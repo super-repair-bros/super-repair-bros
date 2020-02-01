@@ -5,3 +5,7 @@ func _on_Wrack_is_repaired():
 	#$MyCar/AnimationPlayer.play("repair")
 	#$MyCar/RepairTimer.start()
 	pass
+
+
+func _on_GUI_GameOver():
+	$"GameOver".show();
