@@ -6,7 +6,7 @@ stages:
 html5:
     stage: build
     before_script:
-        - mkdir build/web
+        - mkdir -p build/web
     script:
         - godot -v --export "HTML5" ./build/web/index.html
     artifacts:
@@ -16,7 +16,7 @@ html5:
 linux:
     stage: build
     before_script:
-        - mkdir build/linux
+        - mkdir -p build/linux
     script:
         - godot -v --export "Linux/X11" ./build/linux/super-repair-bros.x86_64
     artifacts:
