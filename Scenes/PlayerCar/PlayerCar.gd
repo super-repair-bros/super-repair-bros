@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (int) var speed = 200
+export (int) var speed = 90
 export (bool) var is_repairing = false
 
 var velocity = Vector2(speed, 0)
@@ -53,7 +53,7 @@ func calculate_swipe(swipe_end):
 func change_direction():
 	var snappedPosition = position.snapped(Vector2(12, 12))
 	var testTransform = Transform2D(0, snappedPosition)
-	if velocity != next_velocity && !test_move(testTransform, next_velocity):
+	if velocity != next_velocity && !test_move(testTransform, next_velocity.clamped(3)):
 		position = snappedPosition
 		velocity = next_velocity
 
@@ -73,4 +73,5 @@ func _physics_process(_delta):
 	else:
 		change_direction()
 		velocity = move_and_slide(velocity)
+		print(velocity)
 		world_is_endless()
