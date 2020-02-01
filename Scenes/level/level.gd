@@ -9,7 +9,8 @@ func _on_Wrack_is_repaired():
 	$MyCar/AnimationPlayer.play("repair")
 	$MyCar/AnimationPlayer.play("repair_bar")
 	$MyCar/RepairBar.play("repair_bar")
-	$Wrack/AudioStreamPlayer2D.play()
+	$Wrack/AudioFixed.play()
+
 	$MyCar/RepairTimer.start()
 
 
