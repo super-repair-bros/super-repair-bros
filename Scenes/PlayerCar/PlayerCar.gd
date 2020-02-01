@@ -20,6 +20,7 @@ func get_input():
 	if Input.is_action_pressed('up') && cur_direction != 3:
 		next_direction = 4
 
+func change_direction():
 	if next_direction != cur_direction && not is_on_wall():
 		if next_direction == 1:
 			velocity.x = 1
@@ -40,6 +41,7 @@ func get_input():
 
 	velocity = velocity.normalized() * speed
 
+func world_is_endless():
 	if position.x > get_viewport_rect().size.x:
 		position.x = 0
 	if position.y > get_viewport_rect().size.y:
@@ -52,4 +54,6 @@ func get_input():
 
 func _physics_process(_delta):
 	get_input()
-	velocity = move_and_slide (velocity, Vector2( 0, 0 ), false, 10)
+	velocity = move_and_slide (velocity, Vector2( 0, 0 ), false, 1)
+	change_direction()
+	world_is_endless()
