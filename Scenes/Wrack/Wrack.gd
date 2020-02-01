@@ -37,5 +37,5 @@ func _physics_process(delta):
 		position.y = posy
 		isplaced = true
 	
-func place_a_wrack():
+func placewrack():
 	isplaced = false
