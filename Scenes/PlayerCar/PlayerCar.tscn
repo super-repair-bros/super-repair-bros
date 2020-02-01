@@ -7,8 +7,9 @@
 extents = Vector2( 4, 4 )
 
 [sub_resource type="Animation" id=2]
-resource_name = "drive"
+resource_name = "idle"
 length = 0.4
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
@@ -16,13 +17,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, -0.931 ), Vector2( 0, -1.38 ), Vector2( 0, -0.714 ), Vector2( 0, 0 ) ]
 }
 
 [node name="MyCar" type="KinematicBody2D"]
+position = Vector2( 0, -0.678748 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -32,4 +34,4 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/drive = SubResource( 2 )
+anims/idle = SubResource( 2 )
