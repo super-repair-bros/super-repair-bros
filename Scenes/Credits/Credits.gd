@@ -18,3 +18,7 @@ func _ready():
 
 func _on_Exit_pressed():
 	get_tree().change_scene("res://Scenes/TitleScreen/TitleScreen.tscn")
+
+
+func _on_Link_pressed():
+	OS.shell_open('http://superrepairbros.de/')
