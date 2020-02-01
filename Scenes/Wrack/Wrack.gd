@@ -8,6 +8,7 @@ export var isplaced = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimationPlayer.play("broken")
+	$AudioStreamPlayer2D.play()
 	emit_signal('wrackplease')
 
 func _on_Area2D_body_entered(body):
