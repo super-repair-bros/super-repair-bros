@@ -38,4 +38,3 @@ func _physics_process(delta):
 	
 func place_a_wrack():
 	isplaced = false
-

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Credits.png-1820ebd0aefa89380b9dbcf9d52555fc.stex"
+path="res://.import/road_3_ends.png-aacececfb47c3582cbe32d2ef802a765.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/text/Credits.png"
-dest_files=[ "res://.import/Credits.png-1820ebd0aefa89380b9dbcf9d52555fc.stex" ]
+source_file="res://Assets/Graphics/tiles/road_3_ends.png"
+dest_files=[ "res://.import/road_3_ends.png-aacececfb47c3582cbe32d2ef802a765.stex" ]
 
 [params]
 
