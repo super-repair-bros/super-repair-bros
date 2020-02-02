@@ -4,44 +4,20 @@ stages:
     - build
     - release
 
-web:
+build:
     stage: build
-    before_script:
-        - mkdir -p build/web
     script:
-        - godot --export "HTML5" ./build/web/index.html
+        - ./build.sh
     artifacts:
         paths:
-            - build/web
-
-linux:
-    stage: build
-    before_script:
-        - mkdir -p build/linux
-    script:
-        - godot --export "Linux/X11" ./build/linux/super-repair-bros.x86_64
-    artifacts:
-        paths:
-            - build/linux
-
-windows:
-    stage: build
-    before_script:
-        - mkdir -p build/windows
-    script:
-        - godot --export "Windows Desktop" ./build/windows/super-repair-bros.exe
-    artifacts:
-        paths:
-            - build/windows
+            - dist
 
 pages:
     stage: release
     dependencies:
-        - web
-    before_script:
-        - mkdir public
+        - build
     script:
-        - mv build/web/* ./public
+        - mv dist public
     artifacts:
         paths:
             - public
