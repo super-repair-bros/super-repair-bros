@@ -26,7 +26,6 @@ func _ready():
 			if percent <= 80:
 				# 4 Standard tiles
 				var randnum = randi() % 4 + 1
-				print(str(randnum))
 				if randnum == 1:
 					set_cell(lvlx, lvly, 0)
 				if randnum == 2:
@@ -40,7 +39,6 @@ func _ready():
 			else:
 				# 2 Blocked tiles
 				var randnum = randi() % 2 + 1
-				print(str(randnum))
 				if randnum == 1:
 					set_cell(lvlx, lvly, 2)
 				if randnum == 2:
