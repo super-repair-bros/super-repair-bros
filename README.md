@@ -1,4 +1,4 @@
-![](Assets/Graphics/logo/super_mario_bros_logo.png)
+![](Assets/Graphics/logo/super_repair_bros_logo.png)
 
 Super Repair Bros.
 ==================
@@ -17,7 +17,7 @@ For reference the license is given below and can also be found at https://creati
 Playing the Game
 ================
 
-![](Assets/Graphics/screenshots/screenshot_3.png)
+![](Assets/Graphics/screenshots/screenshot_super_repair_bros.png)
 You can either directly [play the game](http://chlah.tcv8.de/super-repair-bros/web) in your browser, or follow the instructions below to download the game.
 
 Linux
