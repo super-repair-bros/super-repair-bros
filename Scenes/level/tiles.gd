@@ -6,9 +6,18 @@ export var levelheight = 4
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	randomize()
+	# First draw the border
 	for lvlx in range(0, levelwidht):
-		for lvly in range(0, levelheight):
+		set_cell(lvlx, 0, 0)
+		set_cell(lvlx, levelheight - 1, 0)
+	
+	for lvly in range(1, levelheight - 1):
+		set_cell(0, lvly, 0)
+		set_cell(levelwidht - 1, lvly, 0)
+	
+	randomize()
+	for lvlx in range(1, levelwidht - 1):
+		for lvly in range(1, levelheight - 1):
 			var percent = randi() % 99 + 1
 			if percent <= 80:
 				# 4 Standard tiles
