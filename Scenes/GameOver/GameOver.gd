@@ -1,13 +1,20 @@
 extends VBoxContainer
 
 export var timeout = 10;
-export var min_timeout_input = 8;
+#export var min_timeout_input = 8;
+var is_game_over = false
 
 func _ready():
 	refresh();
 
-func _input(ev):
-	if timeout <= min_timeout_input:
+func _input(event):
+	if is_game_over:
+		if event.is_action_pressed("click") \
+		or event.is_action_pressed("ui_cancel") \
+		or event.is_action_pressed("ui_accept"):
+			go_to_title()
+		
+	if event.is_action_pressed("ui_cancel"):
 		go_to_title()
 
 func show():
@@ -15,10 +22,12 @@ func show():
 	$"Timer".start();
 
 func _on_Timer_timeout():
+	is_game_over = true
 	timeout = timeout - 1;
 	refresh();
 	
 	if timeout <= 0:
+		is_game_over = false
 		go_to_title()
 
 func refresh():
@@ -28,3 +37,4 @@ func go_to_title():
 	var tree = get_tree()
 	tree.change_scene("res://Scenes/TitleScreen/TitleScreen.tscn")
 	tree.paused = false
+
