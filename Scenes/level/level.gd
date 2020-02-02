@@ -2,6 +2,9 @@ extends Node2D
 
 signal successfully_repaired
 
+func _ready():
+	$BackGroundMusic.play()
+
 func _on_Wrack_is_repaired():
 	$MyCar.move_and_slide(Vector2())
 	$MyCar/CollisionShape2D.set_deferred("disabled", true)
