@@ -32,5 +32,6 @@ func place_turtle():
 
 func _on_turtle_body_entered(body):
 	if body.name == "MyCar":
+		$AudioStreamPlayer2D.play()
 		emit_signal("turtle_smashed")
 		place_turtle()
