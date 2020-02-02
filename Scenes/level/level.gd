@@ -2,6 +2,22 @@ extends Node2D
 
 signal successfully_repaired
 
+var time_begin
+var time_delay
+
+func _ready():
+	time_begin = OS.get_ticks_usec()
+	time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
+	$BackgroundMusic.play()
+
+func _process(delta):
+	# Obtain from ticks.
+	var time = (OS.get_ticks_usec() - time_begin) / 1000000.0
+	# Compensate for latency.
+	time -= time_delay
+	# May be below 0 (did not being yet).
+	time = max(0, time)
+
 func _on_Wrack_is_repaired():
 	$MyCar.move_and_slide(Vector2())
 	$MyCar/CollisionShape2D.set_deferred("disabled", true)
