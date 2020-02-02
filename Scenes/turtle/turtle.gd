@@ -1,11 +1,24 @@
-extends KinematicBody2D
+extends Area2D
 
-func _ready():
-	position.x = -50
-	position.y = -50
+signal turtle_smashed
+
+var myturtlelocations = []
+
+func _on_tiles_placeturtle(turtlelocations):
+	myturtlelocations = turtlelocations
+	place_turtle()
+	visible = true	
 
 
-func _on_tiles_placeturtle(pos):
-	print("Place Turtle at: " + str(pos[0]) + ", " + str(pos[1]))
-	position.x = pos[0]
-	position.y = pos[1]
+func place_turtle():
+	randomize()
+	var newpos = myturtlelocations[randi() % myturtlelocations.size()]
+	position.x = newpos[0]
+	position.y = newpos[1]
+	visible = true	
+
+
+func _on_turtle_body_entered(body):
+	if body.name == "MyCar":
+		emit_signal("turtle_smashed")
+		place_turtle()

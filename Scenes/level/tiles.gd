@@ -32,7 +32,7 @@ func _ready():
 					set_cell(lvlx, lvly, 1)
 				if randnum == 3:
 					# This tile has a crosswalk, remember that for our turtle locations
-					turtlelocations.append(Vector2(lvlx * tile_size, lvly * tile_size))					
+					turtlelocations.append(Vector2(lvlx * tile_size + 5, lvly * tile_size + 11))					
 					set_cell(lvlx, lvly, 3)
 				if randnum == 4:
 					set_cell(lvlx, lvly, 4)
@@ -45,12 +45,8 @@ func _ready():
 					set_cell(lvlx, lvly, 5)
 	# Set a turtle
 	if turtlelocations:
-		emit_signal("placeturtle", turtlelocations[0])
-		emit_signal("showturtle")
+		emit_signal("placeturtle", turtlelocations)
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().change_scene("res://Scenes/TitleScreen/TitleScreen.tscn")
-
-func _on_WrackSpawnTimer_timeout():
-	pass

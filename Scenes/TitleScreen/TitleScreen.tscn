@@ -109,6 +109,7 @@ margin_right = 912.0
 margin_bottom = 416.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
 
 [node name="Characters" type="TextureRect" parent="MainMenu/HBoxContainer/CenterContainer"]
 margin_left = 222.0
