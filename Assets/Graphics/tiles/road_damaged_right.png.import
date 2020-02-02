@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlatzhalterCar.jpg-0c8aac825611d99aac85c16486974abf.stex"
+path="res://.import/road_damaged_right.png-d3e3fdd7ac18cba69ba3a6a0cd2cd4bd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/PlatzhalterCar.jpg"
-dest_files=[ "res://.import/PlatzhalterCar.jpg-0c8aac825611d99aac85c16486974abf.stex" ]
+source_file="res://Assets/Graphics/tiles/road_damaged_right.png"
+dest_files=[ "res://.import/road_damaged_right.png-d3e3fdd7ac18cba69ba3a6a0cd2cd4bd.stex" ]
 
 [params]
 

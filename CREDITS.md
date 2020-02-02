@@ -16,7 +16,7 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
 This game uses sound and music made with [Sonic Pi](https://sonic-pi.net).
 
-[LICENCE](https://github.com/samaaron/sonic-pi/blob/master/LICENSE.md)
+[LICENSE](https://github.com/samaaron/sonic-pi/blob/master/LICENSE.md)
 
 ## Retro Computer
 
