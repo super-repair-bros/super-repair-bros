@@ -4,7 +4,6 @@ Super Repair Bros.
 ==================
 
 [![CI pipeline](https://travis-ci.org/Super-Repair-Bros/Super-Repair-Bros..svg?branch=master)](https://travis-ci.org/Super-Repair-Bros/Super-Repair-Bros.)
-[![latest release](https://img.shields.io/github/v/release/Super-Repair-Bros/Super-Repair-Bros..svg)](https://github.com/Super-Repair-Bros/Super-Repair-Bros./releases/latest)
 
 Super Repair Bros. is a game built with [Godot](https://godotengine.org/).
 The documentation of Godot can be found [here](https://docs.godotengine.org/).
