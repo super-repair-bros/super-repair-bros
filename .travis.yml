@@ -32,3 +32,4 @@ deploy:
       local-dir: dist/web
       on:
           branch: master
+
