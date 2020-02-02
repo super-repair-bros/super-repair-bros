@@ -112,10 +112,10 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 
 [node name="Characters" type="TextureRect" parent="MainMenu/HBoxContainer/CenterContainer"]
-margin_left = 57.0
-margin_top = 40.0
-margin_right = 395.0
-margin_bottom = 376.0
+margin_left = 10.0
+margin_top = 5.0
+margin_right = 442.0
+margin_bottom = 411.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 3 )
