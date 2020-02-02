@@ -18,8 +18,10 @@ func _process(_delta):
 
 func _on_NewGameLabel_pressed():
 	get_tree().change_scene("res://Scenes/level/level.tscn")
-
-
+	#$MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/NewGameLabel.set_deferred("invisible", true)
+	#$MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/CreditsLabel.set_deferred("invisible", true)
+	#$MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/ExitLabel.set_deferred("invisible", true)
+	
 func _on_CreditsLabel_pressed():
 	get_tree().change_scene("res://Scenes/Credits/Credits.tscn")
 
