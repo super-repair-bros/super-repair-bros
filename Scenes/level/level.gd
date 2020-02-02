@@ -24,6 +24,7 @@ func _on_Wrack_is_repaired():
 	$MyCar/CollisionShape2D.set_deferred("disabled", true)
 	$MyCar.set_deferred("is_repairing", true)
 	$MyCar/AnimationPlayer.play("repair")
+	$MyCar/AnimatedSprite.play("repair")
 	$MyCar/AnimationPlayer.play("repair_bar")
 	$MyCar/RepairBar.play("repair_bar")
 	$Wrack/AudioFixed.play()
