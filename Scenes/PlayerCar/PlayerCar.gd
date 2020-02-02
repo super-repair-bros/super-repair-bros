@@ -10,7 +10,17 @@ signal swipe
 var swipe_start = null
 var minimum_drag = 5
 
+export var level_width = 8;
+export var level_height = 4;
+
 func _ready():
+	# Spawn car
+	randomize()
+	var posX = randi() % level_width
+	var posY = randi() % level_height
+	position.x = posX * 24 + 12
+	position.y = posY * 24 + 12;
+	
 	$AnimationPlayer.play("idle")
 	$RepairBar.play("default")
 
