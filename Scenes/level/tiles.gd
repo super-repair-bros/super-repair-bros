@@ -14,29 +14,39 @@ func _ready():
 	
 	# First draw the border
 	for lvlx in range(0, levelwidht):
-		set_cell(lvlx, 0, get_random_border())
-		set_cell(lvlx, levelheight - 1, get_random_border())
+		var tilenum = get_random_nonblockedtile()
+		if tilenum == 3:
+			# This tile has a crosswalk, remember that for our turtle locations
+			turtlelocations.append(Vector2(lvlx * tile_size + 5, 0 * tile_size + 11))
+		set_cell(lvlx, 0, tilenum)
+		tilenum = get_random_nonblockedtile()
+		if tilenum == 3:
+			# This tile has a crosswalk, remember that for our turtle locations
+			turtlelocations.append(Vector2(lvlx * tile_size + 5, (levelheight - 1) * tile_size + 11))		
+		set_cell(lvlx, levelheight - 1, tilenum)
 	
 	for lvly in range(1, levelheight - 1):
-		set_cell(0, lvly, get_random_border())
-		set_cell(levelwidht - 1, lvly, get_random_border())
+		var tilenum = get_random_nonblockedtile()
+		if tilenum == 3:
+			# This tile has a crosswalk, remember that for our turtle locations
+			turtlelocations.append(Vector2(0 * tile_size + 5, lvly * tile_size + 11))
+		set_cell(0, lvly, tilenum)
+		tilenum = get_random_nonblockedtile()
+		if tilenum == 3:
+			# This tile has a crosswalk, remember that for our turtle locations
+			turtlelocations.append(Vector2((levelwidht - 1) * tile_size + 5, lvly * tile_size + 11))
+		set_cell(levelwidht - 1, lvly, tilenum)
 	
 	for lvlx in range(1, levelwidht - 1):
 		for lvly in range(1, levelheight - 1):
 			var percent = randi() % 99 + 1
 			if percent <= 80:
 				# 4 Standard tiles
-				var randnum = randi() % 4 + 1
-				if randnum == 1:
-					set_cell(lvlx, lvly, 0)
-				if randnum == 2:
-					set_cell(lvlx, lvly, 1)
-				if randnum == 3:
+				var tilenum = get_random_nonblockedtile()
+				if tilenum == 3:
 					# This tile has a crosswalk, remember that for our turtle locations
-					turtlelocations.append(Vector2(lvlx * tile_size + 5, lvly * tile_size + 11))					
-					set_cell(lvlx, lvly, 3)
-				if randnum == 4:
-					set_cell(lvlx, lvly, 4)
+					turtlelocations.append(Vector2(lvlx * tile_size + 5, lvly * tile_size + 11))
+				set_cell(lvlx, lvly, tilenum)
 			else:
 				# 3 Blocked tiles
 				var randnum = randi() % 3 + 1
@@ -54,7 +64,7 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().change_scene("res://Scenes/TitleScreen/TitleScreen.tscn")
 		
-func get_random_border():
+func get_random_nonblockedtile():
 	var rand = randi() % 5;
 	while rand == 2: 
 		rand = randi() % 5
