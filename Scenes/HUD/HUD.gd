@@ -1,9 +1,10 @@
 extends Node
 
-signal GameOver;
+signal GameOver
 
-export var timeInSec = 20;
-export var scorePerRepair = 10;
+export var timeInSec = 20
+export var scorePerRepair = 10
+export var scorePerTurtle = 3
 
 var score = 0;
 
@@ -29,12 +30,17 @@ func _on_Timer_timeout():
 	refreshTime()
 
 func refreshTime():
-	$"HBoxContainer/time".text = "Time left: %s" % timeInSec;
+	$"HBoxContainer/time".text = "Time left: %s" % timeInSec
 
 func refreshScore():
-	$"HBoxContainer/score".text = "Score: %s" % score;
+	$"HBoxContainer/score".text = "Score: %s" % score
 
 
 func _on_level_successfully_repaired():
 	score = score + scorePerRepair
+	refreshScore()
+
+
+func _on_turtle_turtle_smashed():
+	score = score + scorePerTurtle
 	refreshScore()
