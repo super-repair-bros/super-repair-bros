@@ -22,9 +22,9 @@ deploy:
           - "dist/super-repair-bros-linux.x86_64"
           - "dist/super-repair-bros-windows.exe"
           - "dist/super-repair-bros-macos.zip"
-    on:
-        all_branches: true
-        tags: true
+      on:
+          all_branches: true
+          tags: true
 
     - provider: pages
       skip-cleanup: true
@@ -32,3 +32,4 @@ deploy:
       local-dir: dist/web
       on:
           branch: master
+
