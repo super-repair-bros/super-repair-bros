@@ -328,3 +328,4 @@ visible = false
 [connection signal="GameOver" from="GUI" to="." method="_on_GUI_GameOver"]
 [connection signal="is_repaired" from="Wrack" to="." method="_on_Wrack_is_repaired"]
 [connection signal="wrackplease" from="Wrack" to="Wrack" method="try_to_place_a_wrack"]
+[connection signal="turtle_smashed" from="turtle" to="GUI" method="_on_turtle_turtle_smashed"]
