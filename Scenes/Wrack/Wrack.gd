@@ -5,6 +5,12 @@ signal is_repaired
 
 export var isplaced = true
 
+
+# Consts
+var width = 8;
+var height = 4;
+var tile_size = 24;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimationPlayer.play("broken")
@@ -17,26 +23,23 @@ func _on_Area2D_body_entered(body):
 
 func _physics_process(delta):
 	if not isplaced:
-		var posx
-		var posy
-		var from
 		randomize()
-		posx = randi() % int(get_viewport_rect().size.x) + 1
-		posy = randi() % int(get_viewport_rect().size.y) + 1
-		from = Transform2D(0, Vector2(posx, posy))
-		while (
-			test_move(from, Vector2(0, 1))
-			or test_move(from, Vector2(0, -1))
-			or test_move(from, Vector2(1, 0))
-			or test_move(from, Vector2(-1, 0))
-		):
-			randomize()
-			posx = randi() % int(get_viewport_rect().size.x) + 1
-			posy = randi() % int(get_viewport_rect().size.y) + 1
-			from = Transform2D(0, Vector2(posx, posy))
-		position.x = posx
-		position.y = posy
+		
+		var coords = generate_random_on_crossing()
+		position.x = coords[0]
+		position.y = coords[1]
 		isplaced = true
 	
 func placewrack():
 	isplaced = false
+	
+func generate_random_on_crossing():
+	# Insted of trying all random coords,
+	# we use the grid of width x height tiles
+	var rand = randi() % (width * height + 1);
+	var posX = (rand % width);
+	var posY = int(rand / width);
+	
+	posX = (posX * tile_size + tile_size / 3) + 4;
+	posY = (posY * tile_size + tile_size / 3) + 4;
+	return [posX, posY]
