@@ -27,7 +27,8 @@ func place_turtle():
 		position.y = newpos[1]
 		visible = true
 	else:
-		visible = false
+		position.x = -50
+		position.y = -50
 
 
 func _on_turtle_body_entered(body):
