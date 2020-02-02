@@ -74,5 +74,4 @@ func _physics_process(_delta):
 	else:
 		change_direction()
 		velocity = move_and_slide(velocity)
-		print(velocity)
 		world_is_endless()
