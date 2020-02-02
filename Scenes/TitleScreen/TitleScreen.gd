@@ -16,7 +16,6 @@ func _process(_delta):
 		$MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/CreditsLabel.grab_focus()
 
 
-
 func _on_NewGameLabel_pressed():
 	get_tree().change_scene("res://Scenes/level/level.tscn")
 
