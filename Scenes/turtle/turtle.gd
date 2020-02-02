@@ -1,15 +1,11 @@
 extends KinematicBody2D
 
-signal makevisible
-signal placeme
-
 func _ready():
-	visible = false
+	position.x = -50
+	position.y = -50
 
 
-func _on_tiles_placeturtle():
-	pass # Replace with function body.
-
-
-func _on_tiles_showturtle():
-	pass # Replace with function body.
+func _on_tiles_placeturtle(pos):
+	print("Place Turtle at: " + str(pos[0]) + ", " + str(pos[1]))
+	position.x = pos[0]
+	position.y = pos[1]

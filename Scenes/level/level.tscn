@@ -323,7 +323,6 @@ autoplay = true
 [node name="turtle" parent="." instance=ExtResource( 16 )]
 [connection signal="successfully_repaired" from="." to="GUI" method="_on_level_successfully_repaired"]
 [connection signal="placeturtle" from="tiles" to="turtle" method="_on_tiles_placeturtle"]
-[connection signal="showturtle" from="tiles" to="turtle" method="_on_tiles_showturtle"]
 [connection signal="timeout" from="MyCar/RepairTimer" to="." method="_on_RepairTimer_timeout"]
 [connection signal="GameOver" from="GUI" to="." method="_on_GUI_GameOver"]
 [connection signal="is_repaired" from="Wrack" to="." method="_on_Wrack_is_repaired"]
