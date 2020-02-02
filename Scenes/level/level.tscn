@@ -321,6 +321,7 @@ stream = ExtResource( 15 )
 autoplay = true
 
 [node name="turtle" parent="." instance=ExtResource( 16 )]
+visible = false
 [connection signal="successfully_repaired" from="." to="GUI" method="_on_level_successfully_repaired"]
 [connection signal="placeturtle" from="tiles" to="turtle" method="_on_tiles_placeturtle"]
 [connection signal="timeout" from="MyCar/RepairTimer" to="." method="_on_RepairTimer_timeout"]
