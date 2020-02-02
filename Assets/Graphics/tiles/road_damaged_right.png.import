@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/label_options.png-ad9cbe39d49d7231484735986b540902.stex"
+path="res://.import/road_damaged_right.png-d3e3fdd7ac18cba69ba3a6a0cd2cd4bd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/menus/label_options.png"
-dest_files=[ "res://.import/label_options.png-ad9cbe39d49d7231484735986b540902.stex" ]
+source_file="res://Assets/Graphics/tiles/road_damaged_right.png"
+dest_files=[ "res://.import/road_damaged_right.png-d3e3fdd7ac18cba69ba3a6a0cd2cd4bd.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
