@@ -22,7 +22,7 @@ func _ready():
 	var posY = randi() % level_height
 	position.x = posX * 24 + 12
 	position.y = posY * 24 + 12;
-	
+
 	$AnimationPlayer.play("idle")
 	$RepairBar.play("default")
 
@@ -46,14 +46,14 @@ func calculate_swipe(swipe_end):
 		return
 
 	var swipe = swipe_end - swipe_start
-	if abs(swipe.x) > minimum_drag && velocity.x == 0:
+	if abs(swipe.x) > minimum_drag && (velocity.x == 0 || deadend):
 		# right
 		if swipe.x > 0:
 			next_velocity = Vector2(speed, 0)
 		# left
 		else:
 			next_velocity = Vector2(-speed, 0)
-	if abs(swipe.y) > minimum_drag && velocity.y == 0:
+	if abs(swipe.y) > minimum_drag && (velocity.y == 0 || deadend):
 		# down
 		if swipe.y > 0:
 			next_velocity = Vector2(0, speed)
