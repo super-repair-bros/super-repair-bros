@@ -6,6 +6,7 @@ export var timeInSec = 20
 export var scorePerRepair = 10
 export var scorePerTurtle = 3
 
+var carRepaired = false
 var score = 0;
 
 
@@ -13,11 +14,6 @@ var score = 0;
 func _ready():
 	refreshTime()
 	refreshScore()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 func _on_Timer_timeout():
@@ -29,8 +25,10 @@ func _on_Timer_timeout():
 	
 	refreshTime()
 
+
 func refreshTime():
 	$"HBoxContainer/time".text = "Time left: %s" % timeInSec
+
 
 func refreshScore():
 	$"HBoxContainer/score".text = "Score: %s" % score
@@ -38,9 +36,15 @@ func refreshScore():
 
 func _on_level_successfully_repaired():
 	score = score + scorePerRepair
+	carRepaired = true
+	get_parent().turtleMurder = false
 	refreshScore()
 
 
 func _on_turtle_turtle_smashed():
 	score = score + scorePerTurtle
+	if score >= 9 && !carRepaired:
+		get_parent().turtleMurder = true
+	else:
+		get_parent().turtleMurder = false
 	refreshScore()

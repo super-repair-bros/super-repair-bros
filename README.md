@@ -6,7 +6,7 @@ Super Repair Bros.
 [![CI pipeline](https://travis-ci.org/super-repair-bros/super-repair-bros.svg?branch=master)](https://travis-ci.org/super-repair-bros/super-repair-bros)
 [![latest release](https://img.shields.io/github/v/release/super-repair-bros/super-repair-bros.svg)](https://github.com/super-repair-bros/super-repair-bros/releases/latest)
 
-Super Repair Bros. is a game build with [Godot](https://godotengine.org/).
+Super Repair Bros. is a game built with [Godot](https://godotengine.org/).
 The documentation of Godot can be found [here](https://docs.godotengine.org/).
 
 This game was created during the [Global Game Jam 2020](https://globalgamejam.org/2020/games/super-repair-bros-0).
@@ -19,7 +19,7 @@ Playing the Game
 
 ![](Assets/Graphics/screenshot_super_repair_bros.png)
 
-You can either directly [play the game](http://chlah.tcv8.de/super-repair-bros/web) in your browser, or follow the instructions below to download the game.
+You can either directly [play the game](http://chlah.tcv8.de/super-repair-bros/web) in your browser, or follow the instructions below to download it.
 
 Linux
 -----

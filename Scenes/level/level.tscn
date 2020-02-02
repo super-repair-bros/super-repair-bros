@@ -328,7 +328,7 @@ format = 1
 tile_data = PoolIntArray( 0, 0, 0 )
 script = ExtResource( 2 )
 
-[node name="GUI" parent="." instance=ExtResource( 6 )]
+[node name="HUD" parent="." instance=ExtResource( 6 )]
 
 [node name="Wrack" parent="." instance=ExtResource( 10 )]
 
@@ -361,9 +361,9 @@ bus = "background"
 
 [node name="turtle" parent="." instance=ExtResource( 16 )]
 visible = false
-[connection signal="successfully_repaired" from="." to="GUI" method="_on_level_successfully_repaired"]
+[connection signal="successfully_repaired" from="." to="HUD" method="_on_level_successfully_repaired"]
 [connection signal="placeturtle" from="tiles" to="turtle" method="_on_tiles_placeturtle"]
-[connection signal="GameOver" from="GUI" to="." method="_on_GUI_GameOver"]
+[connection signal="GameOver" from="HUD" to="." method="_on_GUI_GameOver"]
 [connection signal="is_repaired" from="Wrack" to="." method="_on_Wrack_is_repaired"]
 [connection signal="timeout" from="MyCar/RepairTimer" to="." method="_on_RepairTimer_timeout"]
-[connection signal="turtle_smashed" from="turtle" to="GUI" method="_on_turtle_turtle_smashed"]
+[connection signal="turtle_smashed" from="turtle" to="HUD" method="_on_turtle_turtle_smashed"]

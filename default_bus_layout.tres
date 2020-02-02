@@ -29,5 +29,5 @@ bus/5/name = "turtle bus"
 bus/5/solo = false
 bus/5/mute = false
 bus/5/bypass_fx = false
-bus/5/volume_db = -4.50411
+bus/5/volume_db = -9.63278
 bus/5/send = "Master"
