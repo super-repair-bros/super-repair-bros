@@ -8,24 +8,24 @@ script:
     - docker run -v $(pwd):/build barichello/godot-ci:3.2 sh -c 'cd /build && ./build.sh'
 
 deploy:
-    - provider: releases
-      skip-cleanup: true
-      api_key: "$GITHUB_OAUTH_TOKEN"
-      file_glob: true
-      #file: dist/*
-      draft: true
-      file:
-          - "dist/super-repair-bros-linux.x86_64"
-          - "dist/super-repair-bros-windows.exe"
-          - "dist/super-repair-bros-macos.zip"
-      on:
-          all_branches: true
-          tags: true
+    #    - provider: releases
+    #      skip-cleanup: true
+    #      api_key: "$GITHUB_OAUTH_TOKEN"
+    #      file_glob: true
+    #      #file: dist/*
+    #      draft: true
+    #      file:
+    #          - "dist/super-repair-bros-linux.x86_64"
+    #          - "dist/super-repair-bros-windows.exe"
+    #          - "dist/super-repair-bros-macos.zip"
+    #      on:
+    #          all_branches: true
+    #          tags: true
 
     - provider: pages
       skip-cleanup: true
       github-token: "$GITHUB_OAUTH_TOKEN"
-      local-dir: dist/web
+      local-dir: dist/
       on:
           branch: master
 

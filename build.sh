@@ -3,10 +3,10 @@
 set -e
 
 rm -rf dist/
-mkdir -p dist/web
+mkdir -p dist
 
 echo 'Building for web ...'
-godot --export 'HTML5' dist/web/index.html
+godot --export 'HTML5' dist/index.html
 echo 'done.'
 
 echo 'Building for linux ...'
