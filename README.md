@@ -16,9 +16,7 @@ For reference the license is given below and can also be found at https://creati
 Playing the Game
 ================
 
-![](Assets/Graphics/screenshot_super_repair_bros.png)
-
-You can either directly [play the game](https://superrepairbros.de) in your browser, or follow the instructions below to download it.
+You can either directly **[play the game](https://superrepairbros.de)** in your browser, or follow the instructions below to download it.
 
 Linux
 -----
