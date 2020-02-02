@@ -13,7 +13,9 @@ build:
             - dist
 
 build-ggj-release:
-    stage: build
+    stage: release
+    dependencies:
+        - build
     script:
         - ./build-ggj-release-zip.sh
     artifacts:
