@@ -37,12 +37,14 @@ func _ready():
 				if randnum == 4:
 					set_cell(lvlx, lvly, 4)
 			else:
-				# 2 Blocked tiles
-				var randnum = randi() % 2 + 1
+				# 3 Blocked tiles
+				var randnum = randi() % 3 + 1
 				if randnum == 1:
 					set_cell(lvlx, lvly, 2)
 				if randnum == 2:
 					set_cell(lvlx, lvly, 5)
+				if randnum == 3:
+					set_cell(lvlx, lvly, 6)
 	# Set a turtle
 	if turtlelocations:
 		emit_signal("placeturtle", turtlelocations)

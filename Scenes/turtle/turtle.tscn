@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Graphics/objects/turtle.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/turtle/turtle.gd" type="Script" id=2]
@@ -6,12 +6,54 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.36573, 2.94554 )
 
+[sub_resource type="Animation" id=2]
+resource_name = "walking"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ false, true, false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "walking"
+length = 20.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1.401 ), Vector2( 0, -1.38 ) ]
+}
+
 [node name="turtle" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+offset = Vector2( 0, 0.826683 )
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="FlipAnimation" type="AnimationPlayer" parent="."]
+anims/walking = SubResource( 2 )
+
+[node name="WalkingAnimation" type="AnimationPlayer" parent="."]
+anims/walking = SubResource( 3 )
 [connection signal="body_entered" from="." to="." method="_on_turtle_body_entered"]

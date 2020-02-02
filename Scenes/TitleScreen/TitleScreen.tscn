@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/TitleScreen/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/retro_computer_personal_use.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Assets/Graphics/PlatzhalterCar.jpg" type="Texture" id=3]
+[ext_resource path="res://Assets/Graphics/screenshot_super_repair_bros.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Graphics/text/text_new_game.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Graphics/logo/super_repair_bros_logo.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Graphics/text/text_exit.png" type="Texture" id=6]
@@ -112,10 +112,12 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 
 [node name="Characters" type="TextureRect" parent="MainMenu/HBoxContainer/CenterContainer"]
-margin_left = 222.0
-margin_top = 204.0
-margin_right = 230.0
-margin_bottom = 212.0
+margin_left = 10.0
+margin_top = 5.0
+margin_right = 442.0
+margin_bottom = 411.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -124,7 +126,5 @@ anchor_mode = 0
 current = true
 zoom = Vector2( 6, 6 )
 [connection signal="pressed" from="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/NewGameLabel" to="." method="_on_NewGameLabel_pressed"]
-[connection signal="pressed" from="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/OnePlayer" to="." method="_on_NewGameLabel_pressed"]
-[connection signal="pressed" from="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/TwoPlayer" to="." method="_on_NewGameLabel_pressed"]
 [connection signal="pressed" from="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/CreditsLabel" to="." method="_on_CreditsLabel_pressed"]
 [connection signal="pressed" from="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/ExitLabel" to="." method="_on_ExitLabel_pressed"]
