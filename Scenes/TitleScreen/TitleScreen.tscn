@@ -66,22 +66,6 @@ margin_bottom = 107.0
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 9 )
 
-[node name="OnePlayer" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
-visible = false
-margin_top = 78.0
-margin_right = 456.0
-margin_bottom = 126.0
-texture_normal = ExtResource( 4 )
-texture_hover = ExtResource( 9 )
-
-[node name="TwoPlayer" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
-visible = false
-margin_top = 117.0
-margin_right = 456.0
-margin_bottom = 165.0
-texture_normal = ExtResource( 4 )
-texture_hover = ExtResource( 9 )
-
 [node name="CreditsLabel" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
 margin_top = 137.0
 margin_right = 456.0

@@ -17,9 +17,6 @@ func _process(_delta):
 
 
 func _on_NewGameLabel_pressed():
-	$MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/NewGameLabel.set_deferred("invisible", true)
-	$MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/CreditsLabel.set_deferred("invisible", true)
-	$MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/ExitLabel.set_deferred("invisible", true)
 	get_tree().change_scene("res://Scenes/level/level.tscn")
 
 	
