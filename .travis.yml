@@ -1,0 +1,34 @@
+services:
+    - docker
+
+install:
+    - docker pull barichello/godot-ci:3.2
+
+script:
+    - docker run -v $(pwd):/build/src -v $(pwd):/build barichello/godot-ci:3.2 'cd /build && ./build.sh'
+
+# To make this work, you need to set a GITHUB_TOKEN environment variable through
+# the TravisCI web ui. For more information take a look at the TravisCI docs:
+# https://docs.travis-ci.com/user/deployment/pages/#Setting-the-GitHub-token
+
+deploy:
+    - provider: releases
+      skip-cleanup: true
+      api_key: "$GITHUB_OAUTH_TOKEN"
+      file_glob: true
+      #file: dist/*
+      draft: true
+      file:
+          - "dist/super-repair-bros-linux.x86_64"
+          - "dist/super-repair-bros-windows.exe"
+          - "dist/super-repair-bros-macos.zip"
+    on:
+        all_branches: true
+        tags: true
+
+    - provider: pages
+      skip-cleanup: true
+      github-token: $GITHUB_TOKEN
+      local-dir: dist/web
+      on:
+          branch: master
