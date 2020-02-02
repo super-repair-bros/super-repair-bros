@@ -9,7 +9,7 @@
 extents = Vector2( 3, 3 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 3.00247, 3.016 )
+extents = Vector2( 3.6855, 3.59701 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "broken"
