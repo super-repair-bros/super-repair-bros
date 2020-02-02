@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/PlayerCar/PlayerCar.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Graphics/objects/repair_car.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Graphics/objects/repair_car_blink2.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Graphics/objects/repair_car_blink1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Graphics/objects/loading_part1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Graphics/objects/loading_full.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Graphics/objects/loading_part2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Graphics/objects/loading_empty.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3, 3 )
@@ -55,6 +59,35 @@ tracks/0/keys = {
 "values": [ 1, 0, 1 ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "repair_bar"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("RepairBar:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 3, 3, 3 ]
+}
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "repair_bar",
+"speed": 5.0
+} ]
+
 [node name="MyCar" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -62,7 +95,6 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -0.114633 )
 frames = SubResource( 2 )
 animation = "repair"
 frame = 1
@@ -70,3 +102,9 @@ frame = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 3 )
 anims/repair = SubResource( 4 )
+anims/repair_bar = SubResource( 5 )
+
+[node name="RepairBar" type="AnimatedSprite" parent="."]
+position = Vector2( -4.45648, 0.00842619 )
+scale = Vector2( 0.416682, 0.416682 )
+frames = SubResource( 6 )
