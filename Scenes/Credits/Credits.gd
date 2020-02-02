@@ -10,7 +10,7 @@ func _on_Exit_pressed():
 
 
 func _on_Link_pressed():
-	OS.shell_open('http://superrepairbros.de/')
+	OS.shell_open('https://github.com/Super-Repair-Bros/Super-Repair-Bros./blob/master/README.md')
 
 
 func _on_RichTextLabel_meta_clicked(meta):

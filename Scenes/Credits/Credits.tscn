@@ -102,7 +102,7 @@ margin_top = 336.0
 margin_right = 912.0
 margin_bottom = 364.0
 custom_fonts/font = SubResource( 2 )
-text = "Get the game at superrepairbros.de"
+text = "Get the game at github.com"
 underline = 1
 
 [node name="Exit" type="TextureButton" parent="MarginContainer/VBoxContainer2"]
