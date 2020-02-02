@@ -6,6 +6,7 @@ install:
 
 script:
     - docker run -v $(pwd):/build barichello/godot-ci:3.2 sh -c 'cd /build && ./build.sh'
+    - echo 'superrepairbros.de' > dist/CNAME
 
 deploy:
     #    - provider: releases
