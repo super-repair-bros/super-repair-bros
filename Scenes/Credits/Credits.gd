@@ -11,3 +11,7 @@ func _on_Exit_pressed():
 
 func _on_Link_pressed():
 	OS.shell_open('http://superrepairbros.de/')
+
+
+func _on_RichTextLabel_meta_clicked(meta):
+	OS.shell_open(meta)
