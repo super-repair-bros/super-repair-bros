@@ -1,4 +1,4 @@
-![](Assets/Graphics/logo/super_repair_bros_logo.png)
+![](Assets/Graphics/logo/super_repair_bros.png)
 
 Super Repair Bros.
 ==================

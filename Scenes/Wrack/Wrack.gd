@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-signal wrackplease
+#signal wrackplease
 signal is_repaired
 
 export var isplaced = true
@@ -15,7 +15,8 @@ var tile_size = 24;
 func _ready():
 	$AnimationPlayer.play("broken")
 	$AudioStreamPlayer2D.play()
-	emit_signal('wrackplease')
+	#emit_signal('wrackplease')
+	place_wrack()
 
 func _on_Area2D_body_entered(body):
 	if (body.get_name() == "MyCar"):
@@ -30,7 +31,7 @@ func _physics_process(delta):
 		position.y = coords[1]
 		isplaced = true
 	
-func placewrack():
+func place_wrack():
 	isplaced = false
 	
 func generate_random_on_crossing():

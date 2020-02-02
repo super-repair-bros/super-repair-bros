@@ -54,7 +54,7 @@ custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[u]Godot Engine[/u]
 
-[indent]This game uses Godot Engine, available under the following license:
+[indent]This game uses [url=https://godotengine.org]Godot Engine[/url], available under the following license:
 
 Copyright (c) 2007-2019 Juan Linietsky, Ariel Manzur. Copyright (c) 2014-2019 Godot Engine contributors.
 
@@ -67,12 +67,12 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 [u]Sonic Pi[/u]
 
 [indent]This game uses sound and music made with Sonic Pi.
-LICENSE: https://github.com/samaaron/sonic-pi/blob/master/LICENSE.md[/indent]
+LICENSE: [url]https://github.com/samaaron/sonic-pi/blob/master/LICENSE.md[/url][/indent]
 
 [u]Retro Computer[/u]
 
 [indent]This game uses the Retro Computer font from Petyka.
-https://www.dafont.com/de/retro-computer.font[/indent]
+[url]https://www.dafont.com/de/retro-computer.font[/url][/indent]
 "
 text = "Godot Engine
 
@@ -116,5 +116,6 @@ texture_hover = ExtResource( 4 )
 anchor_mode = 0
 current = true
 zoom = Vector2( 6, 6 )
+[connection signal="meta_clicked" from="MarginContainer/VBoxContainer2/VBoxContainer/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/Link" to="." method="_on_Link_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/Exit" to="." method="_on_Exit_pressed"]
