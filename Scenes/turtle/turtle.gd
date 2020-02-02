@@ -5,6 +5,10 @@ signal turtle_smashed
 var myturtlelocations = []
 var lastloc = []
 
+func _ready():
+	$FlipAnimation.play("walking")
+	$WalkingAnimation.play("walking")
+
 func _on_tiles_placeturtle(turtlelocations):
 	myturtlelocations = turtlelocations
 	place_turtle()
