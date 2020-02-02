@@ -44,12 +44,11 @@ tracks/1/keys = {
 script = ExtResource( 3 )
 
 [node name="Arrow" type="Sprite" parent="."]
-position = Vector2( 0, -9.92293 )
+position = Vector2( 3.8147e-06, -7.63291 )
 texture = ExtResource( 2 )
 
 [node name="BrokenCar" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
