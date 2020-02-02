@@ -12,6 +12,16 @@ build:
         paths:
             - dist
 
+build-ggj-release:
+    stage: release
+    dependencies:
+        - build
+    script:
+        - ./build-ggj-release-zip.sh
+    artifacts:
+        paths:
+            - super-repair-bros-ggj2020.zip
+
 pages:
     stage: release
     dependencies:

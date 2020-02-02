@@ -357,6 +357,7 @@ one_shot = true
 pause_mode = 2
 stream = ExtResource( 15 )
 autoplay = true
+bus = "background"
 
 [node name="turtle" parent="." instance=ExtResource( 16 )]
 visible = false
@@ -364,6 +365,5 @@ visible = false
 [connection signal="placeturtle" from="tiles" to="turtle" method="_on_tiles_placeturtle"]
 [connection signal="GameOver" from="HUD" to="." method="_on_GUI_GameOver"]
 [connection signal="is_repaired" from="Wrack" to="." method="_on_Wrack_is_repaired"]
-[connection signal="wrackplease" from="Wrack" to="Wrack" method="try_to_place_a_wrack"]
 [connection signal="timeout" from="MyCar/RepairTimer" to="." method="_on_RepairTimer_timeout"]
 [connection signal="turtle_smashed" from="turtle" to="HUD" method="_on_turtle_turtle_smashed"]

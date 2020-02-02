@@ -9,6 +9,8 @@ var next_velocity = Vector2(speed, 0)
 signal swipe
 var swipe_start = null
 var minimum_drag = 5
+var lastloc = [-1, -1]
+var deadend = false
 
 export var level_width = 8;
 export var level_height = 4;
@@ -25,13 +27,13 @@ func _ready():
 	$RepairBar.play("default")
 
 func _input(event):
-	if event.is_action_pressed('right') && velocity.x == 0:
+	if event.is_action_pressed('right') && (velocity.x == 0 || deadend):
 		next_velocity = Vector2(speed, 0)
-	if event.is_action_pressed('left') && velocity.x == 0:
+	if event.is_action_pressed('left') && (velocity.x == 0 || deadend):
 		next_velocity = Vector2(-speed, 0)
-	if event.is_action_pressed('down') && velocity.y == 0:
+	if event.is_action_pressed('down') && (velocity.y == 0 || deadend):
 		next_velocity = Vector2(0, speed)
-	if event.is_action_pressed('up') && velocity.y == 0:
+	if event.is_action_pressed('up') && (velocity.y == 0 || deadend):
 		next_velocity = Vector2(0, -speed)
 
 	if event.is_action_pressed('click'):
@@ -85,3 +87,9 @@ func _physics_process(_delta):
 		change_direction()
 		velocity = move_and_slide(velocity)
 		world_is_endless()
+		if position.x == lastloc[0] and position.y == lastloc[1]:
+			deadend = true
+		else:
+			deadend = false
+		lastloc[0] = position.x
+		lastloc[1] = position.y
