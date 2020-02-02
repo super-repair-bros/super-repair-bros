@@ -15,7 +15,7 @@ build:
 build-ggj-release:
     stage: build
     script:
-        - ./build-ggj-release.sh
+        - ./build-ggj-release-zip.sh
     artifacts:
         paths:
             - super-repair-bros-ggj2020.zip
