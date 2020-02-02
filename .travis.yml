@@ -7,10 +7,6 @@ install:
 script:
     - docker run -v $(pwd):/build barichello/godot-ci:3.2 sh -c 'cd /build && ./build.sh'
 
-# To make this work, you need to set a GITHUB_TOKEN environment variable through
-# the TravisCI web ui. For more information take a look at the TravisCI docs:
-# https://docs.travis-ci.com/user/deployment/pages/#Setting-the-GitHub-token
-
 deploy:
     - provider: releases
       skip-cleanup: true
@@ -28,7 +24,7 @@ deploy:
 
     - provider: pages
       skip-cleanup: true
-      github-token: $GITHUB_TOKEN
+      github-token: "$GITHUB_OAUTH_TOKEN"
       local-dir: dist/web
       on:
           branch: master
