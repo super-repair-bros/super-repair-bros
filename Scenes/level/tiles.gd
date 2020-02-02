@@ -5,6 +5,9 @@ export var levelheight = 4
 
 var turtlelocations = []
 
+signal placeturtle
+signal showturtle
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# First draw the border
