@@ -3,6 +3,7 @@ extends TileMap
 export var levelwidht = 8
 export var levelheight = 4
 
+var turtlelocations = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,6 +29,8 @@ func _ready():
 				if randnum == 2:
 					set_cell(lvlx, lvly, 1)
 				if randnum == 3:
+					# This tile has a crosswalk, remember that for our tutrle locations
+					
 					set_cell(lvlx, lvly, 2)
 				if randnum == 4:
 					set_cell(lvlx, lvly, 5)
@@ -39,6 +42,8 @@ func _ready():
 					set_cell(lvlx, lvly, 3)
 				if randnum == 2:
 					set_cell(lvlx, lvly, 4)
+	# Set a turtle
+	
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
