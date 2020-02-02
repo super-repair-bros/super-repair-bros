@@ -18,6 +18,7 @@ Playing the Game
 ================
 
 ![](Assets/Graphics/screenshot_super_repair_bros.png)
+
 You can either directly [play the game](http://chlah.tcv8.de/super-repair-bros/web) in your browser, or follow the instructions below to download the game.
 
 Linux
