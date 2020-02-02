@@ -36,7 +36,7 @@ func placewrack():
 func generate_random_on_crossing():
 	# Insted of trying all random coords,
 	# we use the grid of width x height tiles
-	var rand = randi() % (width * height + 1);
+	var rand = randi() % (width * height);
 	var posX = (rand % width);
 	var posY = int(rand / width);
 	
