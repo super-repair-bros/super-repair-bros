@@ -10,16 +10,17 @@ signal placeturtle
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize()
+	
 	# First draw the border
 	for lvlx in range(0, levelwidht):
-		set_cell(lvlx, 0, 0)
-		set_cell(lvlx, levelheight - 1, 0)
+		set_cell(lvlx, 0, get_random_border())
+		set_cell(lvlx, levelheight - 1, get_random_border())
 	
 	for lvly in range(1, levelheight - 1):
-		set_cell(0, lvly, 0)
-		set_cell(levelwidht - 1, lvly, 0)
+		set_cell(0, lvly, get_random_border())
+		set_cell(levelwidht - 1, lvly, get_random_border())
 	
-	randomize()
 	for lvlx in range(1, levelwidht - 1):
 		for lvly in range(1, levelheight - 1):
 			var percent = randi() % 99 + 1
@@ -52,3 +53,9 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().change_scene("res://Scenes/TitleScreen/TitleScreen.tscn")
+		
+func get_random_border():
+	var rand = randi() % 5;
+	while rand == 2: 
+		rand = randi() % 5
+	return rand
