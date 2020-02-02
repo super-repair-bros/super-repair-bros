@@ -357,6 +357,7 @@ bus = "fixed bus"
 pause_mode = 2
 stream = ExtResource( 15 )
 autoplay = true
+bus = "background"
 
 [node name="turtle" parent="." instance=ExtResource( 16 )]
 visible = false
