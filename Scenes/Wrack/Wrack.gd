@@ -14,7 +14,6 @@ var tile_size = 24;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimationPlayer.play("broken")
-	$AudioStreamPlayer2D.play()
 	#emit_signal('wrackplease')
 	place_wrack()
 
@@ -30,6 +29,7 @@ func _physics_process(delta):
 		position.x = coords[0]
 		position.y = coords[1]
 		isplaced = true
+		$AudioStreamPlayer2D.play()
 	
 func place_wrack():
 	isplaced = false
