@@ -349,6 +349,9 @@ bus = "car bus"
 [node name="RepairTimer" type="Timer" parent="MyCar"]
 one_shot = true
 
+[node name="turtle" parent="." instance=ExtResource( 16 )]
+visible = false
+
 [node name="GameOver" parent="." instance=ExtResource( 12 )]
 
 [node name="GameOver" parent="." instance=ExtResource( 12 )]
@@ -358,9 +361,6 @@ pause_mode = 2
 stream = ExtResource( 15 )
 autoplay = true
 bus = "background"
-
-[node name="turtle" parent="." instance=ExtResource( 16 )]
-visible = false
 [connection signal="successfully_repaired" from="." to="HUD" method="_on_level_successfully_repaired"]
 [connection signal="placeturtle" from="tiles" to="turtle" method="_on_tiles_placeturtle"]
 [connection signal="GameOver" from="HUD" to="." method="_on_GUI_GameOver"]
