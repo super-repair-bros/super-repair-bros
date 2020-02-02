@@ -124,7 +124,5 @@ anchor_mode = 0
 current = true
 zoom = Vector2( 6, 6 )
 [connection signal="pressed" from="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/NewGameLabel" to="." method="_on_NewGameLabel_pressed"]
-[connection signal="pressed" from="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/OnePlayer" to="." method="_on_NewGameLabel_pressed"]
-[connection signal="pressed" from="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/TwoPlayer" to="." method="_on_NewGameLabel_pressed"]
 [connection signal="pressed" from="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/CreditsLabel" to="." method="_on_CreditsLabel_pressed"]
 [connection signal="pressed" from="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/ExitLabel" to="." method="_on_ExitLabel_pressed"]
