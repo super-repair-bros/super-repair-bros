@@ -20,6 +20,8 @@ func _input(event):
 func show():
 	visible = true;
 	$"Timer".start();
+	if get_parent().turtleMurder:
+		get_node("TurtleMurder").set_visible(true)
 
 func _on_Timer_timeout():
 	is_game_over = true
@@ -32,8 +34,6 @@ func _on_Timer_timeout():
 
 func refresh():
 	$"GameOver".text = "Game over (%s)" % timeout
-	if get_parent().turtleMurder:
-		$"TurtleMurder".text = "turtle murderer"
 	
 func go_to_title():
 	var tree = get_tree()
