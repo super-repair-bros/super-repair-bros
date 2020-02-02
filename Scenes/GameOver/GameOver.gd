@@ -23,6 +23,8 @@ func _on_Timer_timeout():
 
 func refresh():
 	$"GameOver".text = "Game over (%s)" % timeout
+	if get_parent().turtleMurder:
+		$"TurtleMurder".text = "turtle murder"
 	
 func go_to_title():
 	var tree = get_tree()

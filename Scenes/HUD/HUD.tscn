@@ -8,7 +8,7 @@
 size = 8
 font_data = ExtResource( 3 )
 
-[node name="GUI" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer"]
 script = ExtResource( 2 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]

@@ -16,6 +16,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="nix2" type="Label" parent="."]
+margin_top = 37.0
+margin_right = 192.0
+margin_bottom = 59.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.921569, 0.129412, 0.129412, 1 )
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="GameOver" type="Label" parent="."]
 margin_top = 37.0
 margin_right = 192.0
@@ -32,4 +46,32 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="TurtleMurder" type="Label" parent="."]
+margin_top = 37.0
+margin_right = 192.0
+margin_bottom = 59.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.921569, 0.129412, 0.129412, 1 )
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nix" type="Label" parent="."]
+margin_top = 37.0
+margin_right = 192.0
+margin_bottom = 59.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.921569, 0.129412, 0.129412, 1 )
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
