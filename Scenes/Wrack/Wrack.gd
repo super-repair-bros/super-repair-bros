@@ -35,7 +35,7 @@ func place_wrack():
 	isplaced = false
 	
 func generate_random_on_crossing():
-	# Insted of trying all random coords,
+	# Instead of trying all random coords,
 	# we use the grid of width x height tiles
 	var rand = randi() % (width * height);
 	var posX = (rand % width);
