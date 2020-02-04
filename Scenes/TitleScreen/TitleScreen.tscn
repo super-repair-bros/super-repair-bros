@@ -41,12 +41,12 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainMenu"]
-margin_right = 1217.0
-margin_bottom = 416.0
+margin_right = 912.0
+margin_bottom = 478.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/HBoxContainer"]
 margin_right = 456.0
-margin_bottom = 416.0
+margin_bottom = 478.0
 size_flags_vertical = 3
 
 [node name="TitleLabel" type="TextureRect" parent="MainMenu/HBoxContainer/VBoxContainer"]
@@ -57,61 +57,67 @@ texture = ExtResource( 5 )
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/HBoxContainer/VBoxContainer"]
 margin_top = 68.0
 margin_right = 456.0
-margin_bottom = 390.0
+margin_bottom = 452.0
 size_flags_vertical = 3
 custom_constants/separation = 30
 alignment = 1
 
 [node name="helptext" type="Label" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 8.0
 margin_right = 456.0
-margin_bottom = 80.0
+margin_bottom = 72.0
 custom_fonts/font = SubResource( 1 )
 text = "Repair broken cars for points. 
 Smash some turtles for extra points.
 You only got 20 seconds!"
 
 [node name="NewGameLabel" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 110.0
+margin_top = 102.0
 margin_right = 456.0
-margin_bottom = 158.0
+margin_bottom = 150.0
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 9 )
 
-[node name="CreditsLabel" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 188.0
+[node name="HighscoreBtn" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 180.0
 margin_right = 456.0
-margin_bottom = 236.0
+margin_bottom = 228.0
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
+
+[node name="CreditsLabel" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 258.0
+margin_right = 456.0
+margin_bottom = 306.0
 texture_normal = ExtResource( 7 )
 texture_hover = ExtResource( 8 )
 
 [node name="ExitLabel" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 266.0
+margin_top = 336.0
 margin_right = 456.0
-margin_bottom = 314.0
+margin_bottom = 384.0
 texture_normal = ExtResource( 6 )
 texture_hover = ExtResource( 10 )
 
 [node name="VersionLabel" type="Label" parent="MainMenu/HBoxContainer/VBoxContainer"]
-margin_top = 394.0
+margin_top = 456.0
 margin_right = 456.0
-margin_bottom = 416.0
+margin_bottom = 478.0
 custom_fonts/font = SubResource( 2 )
 text = "A Global Game Jam project - 2020."
 
 [node name="CenterContainer" type="CenterContainer" parent="MainMenu/HBoxContainer"]
 margin_left = 460.0
-margin_right = 1010.0
-margin_bottom = 416.0
+margin_right = 912.0
+margin_bottom = 478.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 
 [node name="Characters" type="TextureRect" parent="MainMenu/HBoxContainer/CenterContainer"]
-margin_left = 59.0
-margin_top = 5.0
-margin_right = 491.0
-margin_bottom = 411.0
+margin_left = 10.0
+margin_top = 36.0
+margin_right = 442.0
+margin_bottom = 442.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 3 )
@@ -122,5 +128,6 @@ anchor_mode = 0
 current = true
 zoom = Vector2( 6, 6 )
 [connection signal="pressed" from="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/NewGameLabel" to="." method="_on_NewGameLabel_pressed"]
+[connection signal="pressed" from="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/HighscoreBtn" to="." method="_on_HighscoreBtn_pressed"]
 [connection signal="pressed" from="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/CreditsLabel" to="." method="_on_CreditsLabel_pressed"]
 [connection signal="pressed" from="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/ExitLabel" to="." method="_on_ExitLabel_pressed"]

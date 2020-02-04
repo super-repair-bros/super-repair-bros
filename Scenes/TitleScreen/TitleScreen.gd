@@ -26,3 +26,6 @@ func _on_CreditsLabel_pressed():
 
 func _on_ExitLabel_pressed():
     get_tree().quit()
+
+func _on_HighscoreBtn_pressed():
+    get_tree().change_scene("res://Scenes/Highscore/Highscore.tscn")    
