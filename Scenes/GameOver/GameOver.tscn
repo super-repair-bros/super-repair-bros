@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Fonts/retro_computer_personal_use.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/GameOver/GameOver.gd" type="Script" id=2]
@@ -9,20 +9,32 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=2]
+size = 10
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 10
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 10
+font_data = ExtResource( 1 )
+
 [node name="CanvasLayer" type="VBoxContainer"]
 pause_mode = 2
 visible = false
-margin_right = 192.0
+margin_right = 325.0
 margin_bottom = 96.0
+rect_scale = Vector2( 0.587459, 0.993136 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="nix2" type="Label" parent="."]
-margin_top = 37.0
-margin_right = 192.0
-margin_bottom = 59.0
+margin_right = 325.0
+margin_bottom = 16.0
 size_flags_vertical = 6
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.921569, 0.129412, 0.129412, 1 )
@@ -34,9 +46,9 @@ __meta__ = {
 }
 
 [node name="GameOver" type="Label" parent="."]
-margin_top = 37.0
-margin_right = 192.0
-margin_bottom = 59.0
+margin_top = 20.0
+margin_right = 325.0
+margin_bottom = 36.0
 size_flags_vertical = 6
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.921569, 0.129412, 0.129412, 1 )
@@ -49,10 +61,9 @@ __meta__ = {
 }
 
 [node name="TurtleMurder" type="Label" parent="."]
-visible = false
-margin_top = 37.0
-margin_right = 192.0
-margin_bottom = 59.0
+margin_top = 40.0
+margin_right = 325.0
+margin_bottom = 56.0
 size_flags_vertical = 6
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.921569, 0.129412, 0.129412, 1 )
@@ -66,10 +77,39 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 60.0
+margin_right = 325.0
+margin_bottom = 84.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_top = 5.0
+margin_right = 39.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+text = "Name:"
+align = 1
+valign = 1
+
+[node name="HighscoreName" type="LineEdit" parent="HBoxContainer"]
+margin_left = 43.0
+margin_right = 89.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 3 )
+
+[node name="HighscoreBtn" type="Button" parent="HBoxContainer"]
+margin_left = 93.0
+margin_right = 228.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 4 )
+text = "Save Highscore!"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
 [node name="nix" type="Label" parent="."]
-margin_top = 37.0
-margin_right = 192.0
-margin_bottom = 59.0
+margin_top = 88.0
+margin_right = 325.0
+margin_bottom = 104.0
 size_flags_vertical = 6
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.921569, 0.129412, 0.129412, 1 )
@@ -80,3 +120,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="HBoxContainer/HighscoreBtn" to="." method="_on_HighscoreBtn_pressed"]

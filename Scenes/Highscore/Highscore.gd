@@ -9,8 +9,6 @@ func _ready():
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
     var json = JSON.parse(body.get_string_from_utf8()).result
-    #print(str(json))
-    #print(str(json['dreamlo']))
     var highscoretext = ""
     var num = 1
     for entry in json.dreamlo.leaderboard.entry:
