@@ -1,7 +1,7 @@
 extends VBoxContainer
 
 export var timeout = 10;
-#export var min_timeout_input = 8;
+
 var is_game_over = false
 
 func _ready():
