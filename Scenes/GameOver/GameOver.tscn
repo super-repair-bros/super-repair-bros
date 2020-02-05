@@ -124,4 +124,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="focus_entered" from="HBoxContainer/HighscoreName" to="." method="_on_HighscoreName_focus_entered"]
 [connection signal="pressed" from="HBoxContainer/HighscoreBtn" to="." method="_on_HighscoreBtn_pressed"]

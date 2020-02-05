@@ -6,6 +6,7 @@ var is_game_over = false
 
 func _ready():
 	refresh();
+	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
 
 func _input(event):
 	if is_game_over:
@@ -43,5 +44,15 @@ func go_to_title():
 func _on_HighscoreBtn_pressed():
 	var secretkey = 'OURSECRETKEYHERE'
 	var url = "http://dreamlo.com/lb/" + secretkey + "/add/" + $"HBoxContainer/HighscoreName".text + "/" + str($"../HUD".score)
-	$HTTPRequest.request(url)
+	var error = $HTTPRequest.request(url)
+	if error != OK:
+		push_error("An error occurred in the HTTP request, result was " + str(error))
+		
+
+
+func _on_request_completed(result, response_code, headers, body):
 	go_to_title()
+
+
+func _on_HighscoreName_focus_entered():
+	$"Timer".stop();
