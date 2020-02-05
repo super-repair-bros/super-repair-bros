@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/TitleScreen/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/retro_computer_personal_use.ttf" type="DynamicFontData" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Assets/Graphics/text/text_credits_focus.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Graphics/text/text_new_game_focus.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Graphics/text/text_exit_focus.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Graphics/text/text_highscore.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Graphics/text/text_highscore_focus.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -63,38 +65,39 @@ custom_constants/separation = 30
 alignment = 1
 
 [node name="helptext" type="Label" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 6.0
 margin_right = 456.0
-margin_bottom = 72.0
+margin_bottom = 78.0
 custom_fonts/font = SubResource( 1 )
 text = "Repair broken cars for points. 
 Smash some turtles for extra points.
 You only got 20 seconds!"
 
 [node name="NewGameLabel" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 102.0
+margin_top = 108.0
 margin_right = 456.0
-margin_bottom = 150.0
+margin_bottom = 156.0
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 9 )
 
 [node name="HighscoreBtn" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 180.0
+margin_top = 186.0
 margin_right = 456.0
-margin_bottom = 228.0
-texture_normal = ExtResource( 7 )
-texture_hover = ExtResource( 8 )
+margin_bottom = 222.0
+texture_normal = ExtResource( 11 )
+texture_hover = ExtResource( 12 )
 
 [node name="CreditsLabel" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 258.0
+margin_top = 252.0
 margin_right = 456.0
-margin_bottom = 306.0
+margin_bottom = 300.0
 texture_normal = ExtResource( 7 )
 texture_hover = ExtResource( 8 )
 
 [node name="ExitLabel" type="TextureButton" parent="MainMenu/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 336.0
+margin_top = 330.0
 margin_right = 456.0
-margin_bottom = 384.0
+margin_bottom = 378.0
 texture_normal = ExtResource( 6 )
 texture_hover = ExtResource( 10 )
 

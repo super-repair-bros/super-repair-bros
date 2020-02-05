@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/Graphics/text/credits.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Graphics/text/highscore.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/retro_computer_personal_use.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Graphics/text/text_exit.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Graphics/text/text_exit_focus.png" type="Texture" id=4]
