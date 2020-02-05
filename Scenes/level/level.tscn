@@ -354,8 +354,6 @@ visible = false
 
 [node name="GameOver" parent="." instance=ExtResource( 12 )]
 
-[node name="GameOver" parent="." instance=ExtResource( 12 )]
-
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 15 )

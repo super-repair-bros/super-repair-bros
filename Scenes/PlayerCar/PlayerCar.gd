@@ -16,80 +16,80 @@ export var level_width = 8;
 export var level_height = 4;
 
 func _ready():
-	# Spawn car
-	randomize()
-	var posX = randi() % level_width
-	var posY = randi() % level_height
-	position.x = posX * 24 + 12
-	position.y = posY * 24 + 12;
+    # Spawn car
+    randomize()
+    var posX = randi() % level_width
+    var posY = randi() % level_height
+    position.x = posX * 24 + 12
+    position.y = posY * 24 + 12;
 
-	$AnimationPlayer.play("idle")
-	$RepairBar.play("default")
+    $AnimationPlayer.play("idle")
+    $RepairBar.play("default")
 
 func _input(event):
-	if event.is_action_pressed('right') && (velocity.x == 0 || deadend):
-		next_velocity = Vector2(speed, 0)
-	if event.is_action_pressed('left') && (velocity.x == 0 || deadend):
-		next_velocity = Vector2(-speed, 0)
-	if event.is_action_pressed('down') && (velocity.y == 0 || deadend):
-		next_velocity = Vector2(0, speed)
-	if event.is_action_pressed('up') && (velocity.y == 0 || deadend):
-		next_velocity = Vector2(0, -speed)
+    if event.is_action_pressed('right') && (velocity.x == 0 || deadend):
+        next_velocity = Vector2(speed, 0)
+    if event.is_action_pressed('left') && (velocity.x == 0 || deadend):
+        next_velocity = Vector2(-speed, 0)
+    if event.is_action_pressed('down') && (velocity.y == 0 || deadend):
+        next_velocity = Vector2(0, speed)
+    if event.is_action_pressed('up') && (velocity.y == 0 || deadend):
+        next_velocity = Vector2(0, -speed)
 
-	if event.is_action_pressed('click'):
-		swipe_start = get_global_mouse_position()
-	if event.is_action_released('click'):
-		calculate_swipe(get_global_mouse_position())
+    if event.is_action_pressed('click'):
+        swipe_start = get_global_mouse_position()
+    if event.is_action_released('click'):
+        calculate_swipe(get_global_mouse_position())
 
 func calculate_swipe(swipe_end):
-	if swipe_start == null:
-		return
+    if swipe_start == null:
+        return
 
-	var swipe = swipe_end - swipe_start
-	if abs(swipe.x) > minimum_drag && (velocity.x == 0 || deadend):
-		# right
-		if swipe.x > 0:
-			next_velocity = Vector2(speed, 0)
-		# left
-		else:
-			next_velocity = Vector2(-speed, 0)
-	if abs(swipe.y) > minimum_drag && (velocity.y == 0 || deadend):
-		# down
-		if swipe.y > 0:
-			next_velocity = Vector2(0, speed)
-		# up
-		else:
-			next_velocity = Vector2(0, -speed)
+    var swipe = swipe_end - swipe_start
+    if abs(swipe.x) > minimum_drag && (velocity.x == 0 || deadend):
+        # right
+        if swipe.x > 0:
+            next_velocity = Vector2(speed, 0)
+        # left
+        else:
+            next_velocity = Vector2(-speed, 0)
+    if abs(swipe.y) > minimum_drag && (velocity.y == 0 || deadend):
+        # down
+        if swipe.y > 0:
+            next_velocity = Vector2(0, speed)
+        # up
+        else:
+            next_velocity = Vector2(0, -speed)
 
 func change_direction():
-	var snappedPosition = position.snapped(Vector2(12, 12))
-	var testTransform = Transform2D(0, snappedPosition)
-	if velocity != next_velocity && !test_move(testTransform, next_velocity.clamped(3)):
-		position = snappedPosition
-		velocity = next_velocity
-	elif test_move(testTransform, velocity.clamped(2)):
-		velocity = Vector2(0, 0)
+    var snappedPosition = position.snapped(Vector2(12, 12))
+    var testTransform = Transform2D(0, snappedPosition)
+    if velocity != next_velocity && !test_move(testTransform, next_velocity.clamped(3)):
+        position = snappedPosition
+        velocity = next_velocity
+    elif test_move(testTransform, velocity.clamped(2)):
+        velocity = Vector2(0, 0)
 
 func world_is_endless():
-	if position.x > get_viewport_rect().size.x:
-		position.x = 0
-	if position.y > get_viewport_rect().size.y:
-		position.y = 0
-	if position.x < 0:
-		position.x = get_viewport_rect().size.x
-	if position.y < 0:
-		position.y = get_viewport_rect().size.y
+    if position.x > get_viewport_rect().size.x:
+        position.x = 0
+    if position.y > get_viewport_rect().size.y:
+        position.y = 0
+    if position.x < 0:
+        position.x = get_viewport_rect().size.x
+    if position.y < 0:
+        position.y = get_viewport_rect().size.y
 
 func _physics_process(_delta):
-	if is_repairing == true:
-		pass
-	else:
-		change_direction()
-		velocity = move_and_slide(velocity)
-		world_is_endless()
-		if position.x == lastloc[0] and position.y == lastloc[1]:
-			deadend = true
-		else:
-			deadend = false
-		lastloc[0] = position.x
-		lastloc[1] = position.y
+    if is_repairing == true:
+        pass
+    else:
+        change_direction()
+        velocity = move_and_slide(velocity)
+        world_is_endless()
+        if position.x == lastloc[0] and position.y == lastloc[1]:
+            deadend = true
+        else:
+            deadend = false
+        lastloc[0] = position.x
+        lastloc[1] = position.y
