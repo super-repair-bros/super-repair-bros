@@ -49,3 +49,7 @@ func _on_HighscoreBtn_pressed():
 
 func _on_request_completed(result, response_code, headers, body):
 	go_to_title()
+
+
+func _on_HighscoreName_focus_entered():
+	$"Timer".stop();
