@@ -41,7 +41,7 @@ func go_to_title():
 
 
 func _on_HighscoreBtn_pressed():
-    var secretkey = $OURSECRETKEYHERE
+    var secretkey = OURSECRETKEYHERE
     var url = "http://dreamlo.com/lb/" + secretkey + "/add/" + $"HBoxContainer/HighscoreName".text + "/" + str($"../HUD".score)
     $HTTPRequest.request(url)
     go_to_title()

@@ -5,6 +5,7 @@ install:
     - docker pull barichello/godot-ci:3.2
 
 script:
+    - sed -i 's/OURSECRETKEYHERE/"$DREAMLO_SECRET"/g' /Scenes/GameOver/GameOver.gd
     - docker run -v $(pwd):/build barichello/godot-ci:3.2 sh -c 'cd /build && ./build.sh && echo "superrepairbros.de" > dist/CNAME'
 
 deploy:
