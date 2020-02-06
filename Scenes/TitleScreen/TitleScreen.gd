@@ -5,7 +5,7 @@ func _ready():
 	if OS.get_name() == 'HTML5':
 		get_node("MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/ExitLabel").set_visible(false)
 	$MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/NewGameLabel.grab_focus()
-
+	
 
 func _process(_delta):
 	if $MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/NewGameLabel.is_hovered() == true:

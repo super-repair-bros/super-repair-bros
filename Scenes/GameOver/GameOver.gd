@@ -42,6 +42,19 @@ func go_to_title():
 
 
 func _on_HighscoreBtn_pressed():
+	var highscore_time = OS.get_datetime()
+	var hour = (highscore_time["hour"] + 12) % 24
+	var highscore_date = [
+		highscore_time["day"],
+		highscore_time["month"],
+		highscore_time["year"],
+		hour,
+		highscore_time["minute"],
+		highscore_time["second"]
+	]
+	
+	var parsed = "%02d.%02d.%s %02d:%02d:%02d" % highscore_date
+	
 	var secretkey = 'OURSECRETKEYHERE'
 	var url = "http://dreamlo.com/lb/" + secretkey + "/add/" + $"HBoxContainer/HighscoreName".text + "/" + str($"../HUD".score)
 	var error = $HTTPRequest.request(url)
