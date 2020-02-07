@@ -11,7 +11,40 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	var highscoretext = ""
 	var num = 1
 	for entry in json.dreamlo.leaderboard.entry:
-		highscoretext += "%3s: %40s %50s %20s\n" % [num, entry.name, entry.date, entry.score]
+
+		var date = entry.date
+		var splitup = date.split(" ", false, 0)
+		if splitup.size() > 3:
+			print("Error: splitup too big")
+			break
+
+		var dateParts = splitup[0].split("/", false, 0)
+		if dateParts.size() > 3:
+			print("Error: dateParts too big")
+			break
+
+		var timeParts = splitup[1].split(":", false, 0)
+		if timeParts.size() > 3:
+			print("Error: timeParts too big")
+			break
+
+		var isPm = splitup[2] == "PM"
+		
+		var hour = int(timeParts[0])
+		if isPm:
+			hour = (hour + 12) % 24
+		
+		var paramsInOrder = [
+			int(dateParts[1]),
+			int(dateParts[0]),
+			dateParts[2],
+			hour,
+			int(timeParts[1]),
+			int(timeParts[2])
+		];
+		var parsed = "%02d.%02d.%s %02d:%02d:%02d" % paramsInOrder
+
+		highscoretext += "%3s: %40s %50s %20s\n" % [num, entry.name, parsed, entry.score]
 		num += 1
 		if num >= 100:
 			break
