@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-#signal wrackplease
 signal is_repaired
 
 export var isplaced = true
@@ -14,7 +13,6 @@ var tile_size = 24;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimationPlayer.play("broken")
-	#emit_signal('wrackplease')
 	place_wrack()
 
 func _on_Area2D_body_entered(body):
@@ -35,8 +33,6 @@ func place_wrack():
 	isplaced = false
 	
 func generate_random_on_crossing():
-	# Instead of trying all random coords,
-	# we use the grid of width x height tiles
 	var rand = randi() % (width * height);
 	var posX = (rand % width);
 	var posY = int(rand / width);
