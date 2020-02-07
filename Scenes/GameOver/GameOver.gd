@@ -10,8 +10,7 @@ func _ready():
 
 func _input(event):
 	if is_game_over:
-		if event.is_action_pressed("ui_cancel") \
-		or event.is_action_pressed("ui_accept"):
+		if event.is_action_pressed("ui_cancel"):
 			go_to_title()
 
 	if event.is_action_pressed("ui_cancel"):
