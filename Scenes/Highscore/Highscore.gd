@@ -14,18 +14,18 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 
 		var date = entry.date
 		var splitup = date.split(" ", false, 0)
-		if splitup.size() > 3:
-			print("Error: splitup too big")
+		if splitup.size() != 3:
+			push_error("Error: Wrong format")
 			break
 
 		var dateParts = splitup[0].split("/", false, 0)
-		if dateParts.size() > 3:
-			print("Error: dateParts too big")
+		if dateParts.size() != 3:
+			push_error("Error: Wrong format")
 			break
 
 		var timeParts = splitup[1].split(":", false, 0)
-		if timeParts.size() > 3:
-			print("Error: timeParts too big")
+		if timeParts.size() != 3:
+			push_error("Error: Wrong format")
 			break
 
 		var isPm = splitup[2] == "PM"
