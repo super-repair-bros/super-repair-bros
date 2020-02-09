@@ -10,8 +10,11 @@ func _ready():
 
 func _input(event):
 	if is_game_over:
-		if event.is_action_pressed("ui_cancel"):
-			go_to_title()
+		if event.is_action_pressed("ui_accept"):
+			if $"HBoxContainer/HighscoreName".text != "":
+				_on_HighscoreBtn_pressed()
+			else:
+				go_to_title()
 
 	if event.is_action_pressed("ui_cancel"):
 		go_to_title()
@@ -46,7 +49,7 @@ func _on_HighscoreBtn_pressed():
 	var error = $HTTPRequest.request(url)
 	if error != OK:
 		push_error("An error occurred in the HTTP request, result was " + str(error))
-		
+	get_tree().change_scene("res://Scenes/Highscore/Highscore.tscn")
 
 
 func _on_request_completed(result, response_code, headers, body):

@@ -4,13 +4,16 @@ extends Node2D
 func _ready():
 	$MarginContainer/VBoxContainer2/Exit.grab_focus()
 	$HTTPRequest.request("https://tcv8.de/lb/5e37f0b3fe232612b8eac82f/json-desc")
+	print("im ready")
 
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	print("im http request")
 	var json = JSON.parse(body.get_string_from_utf8()).result
 	var highscoretext = ""
 	var num = 1
 	for entry in json.dreamlo.leaderboard.entry:
+		print("in der schleife")
 		highscoretext += "%3s: %40s %50s %20s\n" % [num, entry.name, entry.date, entry.score]
 		num += 1
 		if num >= 100:
