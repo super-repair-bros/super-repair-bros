@@ -49,12 +49,11 @@ func _on_HighscoreBtn_pressed():
 	var error = $HTTPRequest.request(url)
 	if error != OK:
 		push_error("An error occurred in the HTTP request, result was " + str(error))
-	get_tree().change_scene("res://Scenes/Highscore/Highscore.tscn")
 
 
 func _on_request_completed(result, response_code, headers, body):
-	go_to_title()
-
+	get_tree().change_scene("res://Scenes/Highscore/Highscore.tscn")
+	get_tree().paused = false
 
 func _on_HighscoreName_focus_entered():
 	$"Timer".stop();
