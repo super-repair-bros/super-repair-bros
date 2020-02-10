@@ -30,6 +30,9 @@ func _on_Exit_pressed():
 func _on_Link_pressed():
 	OS.shell_open('https://github.com/super-repair-bros/super-repair-bros/blob/master/README.md#playing-the-game')
 
+func reformat_date(date_str):
+	return date_str
+
 func build_entry(entry, num):
 	var container = HBoxContainer.new()
 	
@@ -39,7 +42,8 @@ func build_entry(entry, num):
 	var nameLabel = create_score_label(entry.name)
 	container.add_child(nameLabel)
 	
-	var dateLabel = create_score_label(entry.date)
+	var reformated_date = reformat_date(entry.date)
+	var dateLabel = create_score_label(reformated_date)
 	container.add_child(dateLabel)
 	
 	var scoreLabel = create_score_label(entry.score)
