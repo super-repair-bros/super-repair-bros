@@ -4,7 +4,7 @@ var custom_font = DynamicFont.new()
 
 func _ready():
 	$MarginContainer/VBoxContainer2/Exit.grab_focus()
-	$HTTPRequest.request("https://tcv8.de/lb/5e37f0b3fe232612b8eac82f/json-desc")
+	$HTTPRequest.request("https://www.dreamlo.com/lb/5e37f0b3fe232612b8eac82f/json-desc")
 	
 	custom_font.font_data = load("res://Assets/Fonts/retro_computer_personal_use.ttf")
 
