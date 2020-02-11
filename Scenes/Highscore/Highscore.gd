@@ -30,9 +30,6 @@ func _on_Exit_pressed():
 func _on_Link_pressed():
 	OS.shell_open('https://github.com/super-repair-bros/super-repair-bros/blob/master/README.md#playing-the-game')
 
-func reformat_date(date_str):
-	return date_str
-
 func build_entry(entry, num):
 	var container = HBoxContainer.new()
 	
@@ -50,6 +47,39 @@ func build_entry(entry, num):
 	container.add_child(scoreLabel)
 	
 	return container
+
+func reformat_date(date_str):
+	var splitup = date_str.split(" ", false, 0)
+	if splitup.size() != 3:
+		push_error("Error: Wrong format")
+		return date_str
+
+	var dateParts = splitup[0].split("/", false, 0)
+	if dateParts.size() != 3:
+		push_error("Error: Wrong format")
+		return date_str
+
+	var timeParts = splitup[1].split(":", false, 0)
+	if timeParts.size() != 3:
+		push_error("Error: Wrong format")
+		return date_str
+
+	var isPm = splitup[2] == "PM"
+	
+	var hour = int(timeParts[0])
+	if isPm:
+		hour = (hour + 12) % 24
+	
+	var paramsInOrder = [
+		int(dateParts[1]),
+		int(dateParts[0]),
+		dateParts[2],
+		hour,
+		int(timeParts[1]),
+		int(timeParts[2])
+	];
+	
+	return "%02d.%02d.%s %02d:%02d:%02d" % paramsInOrder
 
 func create_score_label(text, small = false):
 	var label = Label.new()
