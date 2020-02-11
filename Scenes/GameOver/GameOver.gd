@@ -45,7 +45,7 @@ func go_to_title():
 
 func _on_HighscoreBtn_pressed():
 	var secretkey = 'OURSECRETKEYHERE'
-	var url = "https://tcv8.de/lb/" + secretkey + "/add/" + $"HBoxContainer/HighscoreName".text.to_lower() + "/" + str($"../HUD".score)
+	var url = "https://www.dreamlo.com/lb/" + secretkey + "/add/" + $"HBoxContainer/HighscoreName".text.to_lower() + "/" + str($"../HUD".score)
 	var error = $HTTPRequest.request(url)
 	if error != OK:
 		push_error("An error occurred in the HTTP request, result was " + str(error))
