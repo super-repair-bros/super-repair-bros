@@ -19,6 +19,9 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		go_to_title()
 
+	if event.is_pressed():
+		$HBoxContainer/HighscoreName.grab_focus()
+
 func show():
 	visible = true;
 	$"Timer".start();
