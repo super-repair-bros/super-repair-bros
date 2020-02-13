@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Graphics/text/highscore.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/retro_computer_personal_use.ttf" type="DynamicFontData" id=2]
@@ -7,11 +7,25 @@
 [ext_resource path="res://Scenes/Highscore/Highscore.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
 size = 21
 font_data = ExtResource( 2 )
 
 [node name="Highscore" type="Node2D"]
 script = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 669.976
+margin_top = 99.8662
+margin_right = 857.976
+margin_bottom = 128.866
+custom_fonts/font = SubResource( 1 )
+text = "Times are in UTC"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -58,7 +72,7 @@ size_flags_vertical = 3
 margin_top = 336.0
 margin_right = 912.0
 margin_bottom = 364.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Get the game at github.com"
 underline = 1
 
